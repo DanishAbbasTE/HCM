@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DemoGraphicComponent } from './demo-graphic.component';
-
+import { DemoGraphicComponent } from './company-demo-graphic/demo-graphic.component';
+import { DemoGraphicSetupComponent } from './demo-graphic-setup/demo-graphic-setup.component';
 const routes: Routes = [
   {
   path: "",
   children: [
     {
-      path: '',
-      redirectTo: 'demo_graphic',
-      pathMatch: 'full'
-    },
-    {
       path: "demo_graphic",
       component: DemoGraphicComponent,
+    },
+    {
+      path: "demo_graphic_setup",
+      component: DemoGraphicSetupComponent,
     }
   ]
   }

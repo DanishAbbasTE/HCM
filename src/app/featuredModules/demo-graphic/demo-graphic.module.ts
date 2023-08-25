@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DemoGraphicRoutingModule } from './demo-graphic-routing.module';
-import { DemoGraphicComponent } from './demo-graphic/demo-graphic.component';
+import { DemoGraphicComponent } from './company-demo-graphic/demo-graphic.component';
+import { DemoGraphicSetupComponent } from './demo-graphic-setup/demo-graphic-setup.component';
 
 
 @NgModule({
   declarations: [
-    DemoGraphicComponent
+    DemoGraphicComponent,
+    DemoGraphicSetupComponent
   ],
   imports: [
     CommonModule,
