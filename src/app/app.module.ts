@@ -5,6 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullComponent } from './coreModules/full/full.component';
 import { SharedModule } from './sharedModules/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  HttpClientModule,
+  HttpClient,
+  HTTP_INTERCEPTORS,
+} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,8 +23,13 @@ import { SharedModule } from './sharedModules/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
+  exports:[HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
