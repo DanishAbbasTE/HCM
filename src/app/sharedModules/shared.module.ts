@@ -7,13 +7,15 @@ import { RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './common/header/header.component';
 import { SiderBarComponent } from './common/sider-bar/sider-bar.component';
+import { NgxModulesModule } from './thirdPartyModules/ngx-modules/ngx-modules.module';
 
 
 const commonModules = [
   FormsModule,
   ReactiveFormsModule,
   HttpClientModule,
-  RouterModule
+  RouterModule,
+  NgxModulesModule
 ]
 
 const exportedComponents = [
