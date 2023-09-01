@@ -6,7 +6,7 @@ export abstract class Custom {
     return throwError(() => error);
   }
   public static jsontoFormData(
-    jo, // Json Object
+    jo : any, // Json Object
     pk = '', // Parent Key
     carryFormData: FormData
   ): FormData {
@@ -42,15 +42,15 @@ export abstract class Custom {
     return formData;
   }
   // FOR CHECKING THE GIVEN INPUT IS ARRAY
-  public static isArray(val) {
+  public static isArray(val : any) {
     const toString = {}.toString;
     return toString.call(val) === '[object Array]';
   }
   // FOR CHECKING THE GIVEN INPUT IS OBJECT
-  private static isObject(val) {
+  private static isObject(val: any) {
     return !this.isArray(val) && typeof val === 'object' && !!val;
   }
-  public static objToURLQuery(searchObject) {
+  public static objToURLQuery(searchObject: any) {
     let result = '';
     const obj = searchObject;
     Object.keys(obj).forEach((key) => {
@@ -66,14 +66,14 @@ export abstract class Custom {
     if (result) result = result.substring(1, result.length);
     return result;
   }
-  public static arrayToObj(arr) {
+  public static arrayToObj(arr: any[]) {
     const res = arr.map((val) => val);
     let result = res.join(',');
     result = '(' + result + ')';
     return result;
   }
   // Most Used by doesn't required
-  public static emptyCheck(val) {
+  public static emptyCheck(val: string | Date | null | undefined) {
     return val != undefined && val != null && val != '';
   }
 }

@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './common/header/header.component';
 import { SiderBarComponent } from './common/sider-bar/sider-bar.component';
 import { NgxModulesModule } from './thirdPartyModules/ngx-modules/ngx-modules.module';
+import { NgMaterialzModule } from './thirdPartyModules/ng-materialz/ng-materialz.module';
 
 
 const commonModules = [
@@ -15,7 +16,8 @@ const commonModules = [
   ReactiveFormsModule,
   HttpClientModule,
   RouterModule,
-  NgxModulesModule
+  NgxModulesModule,
+  NgMaterialzModule
 ]
 
 const exportedComponents = [

@@ -5,12 +5,12 @@ import { URLz } from '../enums/url.enum';
 import { HttpServiceParam } from '../interfaces/http-service-param';
 import { FormService } from '../services/form.service';
 import { HTTPService } from '../services/http.service';
-import { StateService } from '../services/state.service';
-import { SwalService } from '../services/swal.service';
-import { ControlStateService } from '../services/control.state.service';
+// import { StateService } from '../services/state.service';
+// import { SwalService } from '../services/swal.service';
+// import { ControlStateService } from '../services/control.state.service';
 import { Subscription } from 'rxjs';
 import { ACTION } from '../enums/action.enum';
-import { FormSubmitService } from '../services/form-submit.service';
+// import { FormSubmitService } from '../services/form-submit.service';
 import { AngularServiceInjector } from './angular-service-injector';
 // In Base Class append all the properties / methods with _ (underscore)
 
@@ -23,10 +23,10 @@ export abstract class BaseServiceInjector extends AngularServiceInjector   {
   _fs: FormService;
   _vs: ValidatorService;
   _fhs: FormHelperService;
-  _fss: FormSubmitService;
-  _ss: StateService;
-  _css: ControlStateService;
-  _swl : SwalService;
+  // _fss: FormSubmitService;
+  // _ss: StateService;
+  // _css: ControlStateService;
+  // _swl : SwalService;
 
   // Enum Global Property for HTML Template
   URLz = URLz; // For Template
@@ -46,9 +46,9 @@ export abstract class BaseServiceInjector extends AngularServiceInjector   {
     this._fs = injector.get(FormService);
     this._vs = injector.get(ValidatorService);
     this._fhs = injector.get(FormHelperService);
-    this._swl = injector.get(SwalService);
-    this._css = injector.get(ControlStateService);
-    this._ss = injector.get(StateService);
-    this._fss = injector.get(FormSubmitService);
+    // this._swl = injector.get(SwalService);
+    // this._css = injector.get(ControlStateService);
+    // this._ss = injector.get(StateService);
+    // this._fss = injector.get(FormSubmitService);
   }
 }

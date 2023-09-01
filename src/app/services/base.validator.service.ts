@@ -169,33 +169,33 @@ export class ValidatorService extends AngularServiceInjector {
       }
     };
   }
-  repeatOneField(field1: string) {
-    return (array: FormArray): Validation | null => {
-      let repeat = 0;
-      array?.controls?.forEach((group) => {
-        const fieldA = group?.get(field1);
-        array?.controls?.forEach((groups) => {
-          const fielda = groups?.get(field1);
-          if (
-            fieldA?.value == fielda?.value &&
-            (fieldA?.valid || fieldA?.errors?.['key'] == 'DUPLICATE')
-          ) {
-            repeat++;
-          }
-          if (repeat > 1) {
-            fieldA?.setErrors(VAL.DUPLICATE);
-            return VAL.DUPLICATE;
-          } else {
-            if (fieldA?.errors?.['key'] == 'DUPLICATE') {
-              fieldA?.setErrors(null);
-            }
-          }
-        });
-        repeat = 0;
-      });
-      return null;
-    };
-  }
+  // repeatOneField(field1: string) {
+  //   return (array: FormArray): Validation | null => {
+  //     let repeat = 0;
+  //     array?.controls?.forEach((group) => {
+  //       const fieldA = group?.get(field1);
+  //       array?.controls?.forEach((groups) => {
+  //         const fielda = groups?.get(field1);
+  //         if (
+  //           fieldA?.value == fielda?.value &&
+  //           (fieldA?.valid || fieldA?.errors?.['key'] == 'DUPLICATE')
+  //         ) {
+  //           repeat++;
+  //         }
+  //         if (repeat > 1) {
+  //           fieldA?.setErrors(VAL.DUPLICATE);
+  //           return VAL.DUPLICATE;
+  //         } else {
+  //           if (fieldA?.errors?.['key'] == 'DUPLICATE') {
+  //             fieldA?.setErrors(null);
+  //           }
+  //         }
+  //       });
+  //       repeat = 0;
+  //     });
+  //     return null;
+  //   };
+  // }
   repeatTwoFields(field1: string, field2: string) {
     return (array: FormArray): Validation | null => {
       let repeat = 0;

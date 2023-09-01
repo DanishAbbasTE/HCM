@@ -12,9 +12,9 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'dashboard',
+    path: 'MasterDashboard',
     loadChildren: () =>
-      import('./coreModules/dashboard/dashboard.module').then(
+      import('./coreModules/MasterDashboard/dashboard.module').then(
         (m) => m.DashboardModule),
   },
   {

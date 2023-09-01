@@ -56,13 +56,13 @@ export class FormHelperService extends AngularServiceInjector {
   }
 
 
-  _disable_simple_array(arr: string | any[]) {
-    if (arr.length > 0) {
-      return true;
-    } else if (arr.length == 0) {
-      return false;
-    }
-  }
+  // _disable_simple_array(arr: string | any[]) {
+  //   if (arr.length > 0) {
+  //     return true;
+  //   } else if (arr.length == 0) {
+  //     return false;
+  //   }
+  // }
 
   _disable_Form_Controls(group: any){
     for(const key in (this._fs._form.get(group) as FormGroup).controls) {
@@ -76,16 +76,16 @@ export class FormHelperService extends AngularServiceInjector {
     }
   }
 
-  openSnackBar(message: string, action: string | undefined, horizontal: string | any , vertical: string | any) {
-    const InSec = 3;
-    const horizon: MatSnackBarHorizontalPosition = horizontal;
-    const vert: MatSnackBarVerticalPosition = vertical;
-    this._snackBar.open(message, action, {
-      horizontalPosition: horizon,
-      verticalPosition: vert,
-      duration: InSec * 1000,
-    });
-  }
+  // openSnackBar(message: string, action: string | undefined, horizontal: string | any , vertical: string | any) {
+  //   const InSec = 3;
+  //   const horizon: MatSnackBarHorizontalPosition = horizontal;
+  //   const vert: MatSnackBarVerticalPosition = vertical;
+  //   this._snackBar.open(message, action, {
+  //     horizontalPosition: horizon,
+  //     verticalPosition: vert,
+  //     duration: InSec * 1000,
+  //   });
+  // }
 
   // NUMBER TO WORD
   _numberTostring(number: number) {
