@@ -13,8 +13,8 @@ export enum URLz {
 
 
   // ::::::::::::::: DEMOGRAPHIC SETUP GETS:::::::::::: //
-
-  LOAD_PM_DEMOGRAPHIC_LEVELS_BY_FILTERS = "Demographic/LoadPMDemographicLevelsByFilters",
+  // LoadPMDemographicLevelsByFilters
+  LOAD_PM_DEMOGRAPHIC_LEVELS_BY_FILTERS = "Demographic/LoadPMDemographicLevelsByParent",
 
 
 

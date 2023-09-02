@@ -1,0 +1,217 @@
+*{
+    font-family: monospace;
+}
+body {
+    background: #222D32;
+    font-family: monospace;
+}
+.login__section{
+    background: var(--main-bg-color-d-l);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.login__section:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #0606064a;
+    backdrop-filter: blur(1px);
+    z-index: -1;
+}
+.login__section .backArea{
+    text-align: left;
+}
+.login__section .backArea a{
+    color: white;
+    font: 18px;
+    text-decoration: none;
+}
+.login__section .login-box {
+    width: 350px;
+    height: auto;
+    background: #ffffff;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    box-shadow: 0 3px 20px -5px #1c1c1c, 0 3px 6px #00000070;
+    padding: 15px 15px;
+}
+
+.login__section .login-key {
+    height: 100px;
+    font-size: 80px;
+    line-height: 100px;
+    background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background: white;
+    text-align: center;
+}
+.login-key img{
+    width: 80%;
+}
+.login__section .login-title {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #4f4348;
+}
+
+.login__section .login-form {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.login__section input {
+    background-color: #1a222600;
+    font-size: 17px;
+    border: none;
+    /* border-bottom: 2px solid #0DB8DE; */
+    border-bottom: 2px solid #9f9f9f;
+    border-top: 0px;
+    border-radius: 0px;
+    outline: 0;
+    padding-left: 0px;
+    margin-bottom: 10px;
+    color: #3c3c3c;
+    display: block;
+    width: -webkit-fill-available;
+    min-height: 40px;
+}
+.login__section .invalid-feedback{
+    color: #e46a76;
+    font-size: 12px;
+}
+.login__section input.is-invalid{
+    border-bottom: 2px solid #e46a76;
+}
+.login__section .form-group {
+    margin-bottom: 0px;
+    outline: 0px;
+}
+
+.login__section .form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px solid #0DB8DE;
+    outline: 0;
+    background-color: #1a222600 !important;
+    color: #ECF0F5 !important;
+}
+
+.login__section input:focus {
+    outline: none;
+    box-shadow: 0 0 0;
+}
+
+label {
+    margin-bottom: 0px;
+}
+
+.login__section .form-control-label {
+    font-size: 15px;
+    color: #343434;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.login__section .btnmain {
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0px auto;
+    background: -webkit-linear-gradient(40deg , #5f4b54, #6d6b7154);
+    border: 0px solid transparent;
+    color: #ffffff;
+    padding: 5px 20px;
+    border-radius: 0px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px #0000001f, 0 1px 2px #0000003d;
+    transition: 0.2s !important;
+    font-size: 18px;
+    font-family: inherit;
+}
+
+.login__section .btn-outline-primary:hover {
+    background-color: #0DB8DE !important;
+    border-color: #0DB8DE;
+    color: #172b35 !important;
+    right: 0px;
+}
+.login__section .btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.25rem #fb967800 !important;
+}
+.login__section .login-btm {
+    float: left;
+}
+
+
+.login__section .loginbttm {
+    padding-bottom: 15px;
+    text-align: center;
+}
+.table-responsive table th{
+    text-transform: uppercase;
+}
+
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}

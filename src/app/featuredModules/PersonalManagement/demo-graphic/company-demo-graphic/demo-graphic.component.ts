@@ -3,6 +3,7 @@ import { BaseForm } from '../../../../sharedClasses/base-from';
 import { URLz } from 'src/app/enums/url.enum';
 import { HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { throttleTime } from 'rxjs';
 @Component({
   selector: 'app-demo-graphic',
   templateUrl: './demo-graphic.component.html',
@@ -16,18 +17,20 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
     {value: 'tacos-2', viewValue: 'Tacos'},
   ];
 
-  public levels :any[] = [];
+  public Parentlevels :any[] = [];
+  public childlevels :any[] = [];
 
   constructor( injector : Injector) {
     super(injector);
   }
 
   ngOnInit(): void {
-    this.getDemoGraphicLevel(0);
+    this.getDemoGraphicLevelParent(0);
     this.initForm();
+    this.loadChildDemoGraphic()
   }
 
-  getDemoGraphicLevel(levelId : number | string){
+  getDemoGraphicLevelParent(levelId : number | string){
     this._http.gets({
       endpoint: URLz.CONFIG_DEMO_GRAPHIC,
       query: {
@@ -37,7 +40,24 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
       }
     }).subscribe({
       next: (res : any) => {
-        this.levels = res.data;
+        this.Parentlevels = res.data;
+      },
+      error: (errorz: HttpErrorResponse) => {
+
+      }
+    })
+  }
+
+  getDemoGraphicLevelchild(levelId : number | string){
+    this._http.gets({
+      endpoint: URLz.LOAD_PM_DEMOGRAPHIC_LEVELS_BY_FILTERS,
+      query: {
+        companyId : 1,
+        levelId : levelId
+      }
+    }).subscribe({
+      next: (res : any) => {
+        this.childlevels = res.data;
       },
       error: (errorz: HttpErrorResponse) => {
 
@@ -46,18 +66,14 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
   }
 
   loadChildDemoGraphic(){
-    // this._fs._form?.g.valueChanges
-    //   ?.pipe(
-    //     throttleTime(450) // For Edit Case
-    //   )
-    //   .subscribe((val) => {
-    //     if (this.url === URLz.ORG) {
-    //       this._http.org_id = val;
-    //     } else if (this.url === URLz.ORG_SYSTEM) {
-    //       this._http.sys_id = val;
-    //     }
-    //     if (childType === 'DD') this.loadChildDD(val);
-    //   });
+    this._fs._form?.get('demographicLevelId').valueChanges
+      ?.pipe(
+        throttleTime(450) // For Edit Case
+      )
+      .subscribe((val :any) => {
+          console.log(val);
+          this.getDemoGraphicLevelchild(val);
+      });
   }
 
   initForm(){

@@ -9,9 +9,7 @@ a{
 body{
    background: #f6f7fa !important;
 }
-.fa, .far, .fas{
-  font-family: "Font Awesome 5 Free" !important;
-}
+
 :root{
   --main-bg-color-d-l: linear-gradient(303deg, #714b67, #a1a1a1);
   --nav1-main-menu-bg-color: #F7F9F9;
@@ -167,39 +165,3 @@ animation: showSlow 0.5s ease forwards;
 }
 
 /* NAV CSS */
-
-
-
-.addAreaSection .form-check-input{
-  margin: 0px !important;
-}
-.addAreaSection .check_radio_div{
-  display: flex;
-  height: 100%;
-  align-items: center;
-}
-.addAreaSection .col-form-label{
-  text-transform: capitalize;
-}
-.addAreaSection .add_contant_div label{
-  font-size: 15px;
-}
-.addAreaSection .add_box_card h1{
-  text-transform: capitalize;
-}
-.search_filter_add_area .Page__heading p{
-  text-transform: capitalize;
-}
-.filter_btn{
-  background: var(--other-and-btn-colors);
-  color: white;
-  text-transform: uppercase;
-  padding: 5px 10px;
-  font-weight: 500;
-  border:0px solid transparent;
-  transition: 0.5s;
-}
-.filter_btn:hover{
-  background: var(--other-and-btn-colors-hover);
-}
-
