@@ -13,9 +13,12 @@ import { ToastrModule } from 'ngx-toastr';
       closeButton: true,
       onActivateTick: false,
       timeOut: 0,
-      toastClass: 'toast',
+      // toastClass: 'toast',
       positionClass: 'toast-top-right',
     }),
   ]
 })
 export class NgxModulesModule { }
+
+
+
