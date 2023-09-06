@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from 'src/app/sharedModules/shared.module';
 
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { DesignationComponent } from './designation/designation.component';
@@ -25,7 +26,8 @@ import { WeeklyOffAddComponent } from './weekly-off-add/weekly-off-add.component
   ],
   imports: [
     CommonModule,
-    EmployeeRoutingModule
+    EmployeeRoutingModule,
+    SharedModule
   ]
 })
 export class EmployeeModule { }

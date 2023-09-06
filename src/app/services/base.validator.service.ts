@@ -54,8 +54,14 @@ export class ValidatorService extends AngularServiceInjector {
     group: FormGroup = this._fs._form
   ) {
     let control: FormControl |any;
-    if (!(path instanceof FormControl)) control = group?.get(path) as FormControl;
-    if (control && control.touched) return this.handleRequired(control);
+    if (!(path instanceof FormControl)){
+      control = group?.get(path) as FormControl;
+      return this.handleRequired(control);
+    }
+    if (control && control.touched){
+      console.log("or in this");
+      return this.handleRequired(control);
+    }
     return '';
   }
   _error_control(control: FormControl): Validation |any {

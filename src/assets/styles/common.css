@@ -203,3 +203,11 @@ animation: showSlow 0.5s ease forwards;
   background: var(--other-and-btn-colors-hover);
 }
 
+.save_btn {
+  border: none;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  font-weight: 500;
+  margin-right: 10px;
+  font-size: 15px;
+}

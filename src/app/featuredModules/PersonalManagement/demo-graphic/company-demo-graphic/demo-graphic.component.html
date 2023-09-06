@@ -1,4 +1,3 @@
-
 <form [formGroup]="_fs._form" (ngSubmit)="submit()"   autocomplete="off">
         <!----------------- filters area ----------------->
   <section class="search_filter_add_area">
@@ -17,7 +16,7 @@
           <div class="row">
             <div class="col-12">
               <div class="save__discard__div">
-                <button type="submit " class="third_bar_save">
+                <button type="submit " class="third_bar_save save_btn">
                   Save
                 </button>
                 <a href="javascript:void(0);" class="third_bar_discard">
@@ -52,6 +51,7 @@
                             {{level.title}}
                           </option>
                         </select>
+                        <mat-error *ngIf="_fs._form.get('demographicLevelId')?.touched" > {{  _vs.errMsg('demographicLevelId')}}</mat-error>
                       </div>
                     </div>
                   </div>
@@ -65,14 +65,6 @@
                             {{level.title}}
                           </option>
                         </select>
-                        <!-- <mat-form-field appearance="fill" class="col-sm-10">
-                          <mat-label>Favorite food</mat-label>
-                          <mat-select>
-                            <mat-option *ngFor="let food of foods" [value]="food.value">
-                              {{food.viewValue}}
-                            </mat-option>
-                          </mat-select>
-                        </mat-form-field> -->
                       </div>
                     </div>
                   </div>
@@ -81,6 +73,7 @@
                       <label class="col-sm-2 col-form-label">Demographic Title</label>
                       <div class="col-sm-10">
                         <input class="form-control" id="levelOneInput" formControlName="demographicTitle">
+                        <mat-error *ngIf="_fs._form.get('demographicTitle')?.touched" > {{  _vs.errMsg('demographicTitle')}}</mat-error>
                       </div>
                     </div>
                   </div>
@@ -89,6 +82,7 @@
                       <label class="col-sm-2 col-form-label">Demographic Prefix</label>
                       <div class="col-sm-10">
                         <input class="form-control" id="levelOneInput" formControlName="demographicPrefix">
+                        <mat-error *ngIf="_fs._form.get('demographicPrefix')?.touched" > {{  _vs.errMsg('demographicPrefix')}}</mat-error>
                       </div>
                     </div>
                   </div>
@@ -97,6 +91,7 @@
                       <label class="col-sm-2 col-form-label">Geofences Value</label>
                       <div class="col-sm-10">
                         <input class="form-control" id="levelOneInput" formControlName="geofencesValue">
+                        <mat-error *ngIf="_fs._form.get('geofencesValue')?.touched" > {{  _vs.errMsg('geofencesValue')}}</mat-error>
                       </div>
                     </div>
                   </div>
@@ -107,6 +102,7 @@
                             <label class="form-check-label p-0 mt-1" for="gridCheck">
                                 Is Active
                             </label>
+                            <mat-error *ngIf="_fs._form.get('IsActive')?.touched" > {{  _vs.errMsg('IsActive')}}</mat-error>
                           </div>
                     </div>
                   </div>
@@ -120,44 +116,3 @@
   </section>
   <!----------------- add area----------------->
 </form>
-
-
-
-
-
-  <!-- <div class="col-lg-4">
-    <div class="exampleTree">
-      <ul>
-        <li>
-          <span class="level1" id="level1Select"></span>
-          <ul>
-            <li>
-              <span class="level2" id="level1Input"></span>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <span class="level1" id="level2Select"></span>
-          <ul>
-            <li>
-              <span class="level2" id="level2Input"></span>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <span class="level1" id="level3Select"></span>
-          <ul>
-            <li>
-              <span class="level2" id="level3OneInput"></span>
-            </li>
-            <li>
-              <span class="level2" id="level3TwoInput"></span>
-            </li>
-            <li>
-              <span class="level2" id="level3ThreeInput"></span>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div> -->

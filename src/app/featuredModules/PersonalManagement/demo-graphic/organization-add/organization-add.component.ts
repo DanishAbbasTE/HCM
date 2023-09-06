@@ -4,12 +4,13 @@ import { URLz } from 'src/app/enums/url.enum';
 import { HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { throttleTime } from 'rxjs';
+
 @Component({
-  selector: 'app-demo-graphic',
-  templateUrl: './demo-graphic.component.html',
-  styleUrls: ['./demo-graphic.component.css']
+  selector: 'app-organization-add',
+  templateUrl: './organization-add.component.html',
+  styleUrls: ['./organization-add.component.css']
 })
-export class DemoGraphicComponent extends BaseForm implements OnInit {
+export class OrganizationAddComponent extends BaseForm implements OnInit {
 
   public Parentlevels :any[] = [];
   public childlevels :any[] = [];
@@ -26,7 +27,7 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
 
   getDemoGraphicLevelParent(levelId : number | string){
     this._http.gets({
-      endpoint: URLz.CONFIG_DEMO_GRAPHIC,
+      endpoint: URLz.COFIG_ORGANIZATION_DEMO_GRAPHIC,
       query: {
         companyId : 1,
         levelId : levelId,
@@ -43,7 +44,7 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
 
   getDemoGraphicLevelchild(levelId : number | string){
     this._http.gets({
-      endpoint: URLz.LOAD_PM_DEMOGRAPHIC_LEVELS_BY_FILTERS,
+      endpoint: URLz.PM_ORG_LEVEL_BY_LEVEL_ID,
       query: {
         companyId : 1,
         levelId : levelId
@@ -59,7 +60,7 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
   }
 
   loadChildDemoGraphic(){
-    this._fs._form?.get('demographicLevelId').valueChanges
+    this._fs._form?.get('organizationLevelId').valueChanges
       ?.pipe(
         throttleTime(450) // For Edit Case
       )
@@ -72,12 +73,11 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
   initForm(){
     this._fs._form = this._fb.group({
       companyId:[1],
-      demographicLevelId:['',this._vs._vals('Demographic level id')],
-      demographicTitle:['',this._vs._val('Demographic Title',{min:4 , max:10})],
-      demographicPrefix:['', this._vs._val('Demographic Prefix')],
-      parentId:['',this._vs._vals('Demographic')],
-      geofencesValue:['',this._vs._val('Geofence value')],
-      IsActive:['']
+      organizationLevelId:['',this._vs._vals('Organization level id')],
+      organizationTitle:['',this._vs._val('Demographic Title')],
+      organizationPrefix:['', this._vs._val('Demographic Prefix')],
+      parentId:['',this._vs._vals('Organization')],
+      IsActive:['',this._vs._val('is Active')]
     })
   }
 
@@ -89,7 +89,7 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
       if(this._fs._form.valid){
         this._http.create({
           url: environment.API_URL,
-          endpoint: URLz.SAVE_DEMOGRAPHIC_SETUP,
+          endpoint: URLz.SAVE_ORG_SETUP,
           body: this._fs._form.value
         })
         .subscribe((res)=>{
@@ -97,7 +97,7 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
                   console.log(res);
                   this._vs._toastr_success('SuccessFully submited','success');
                   this._fs._form.reset();
-                              }
+            }
         })
       }
 

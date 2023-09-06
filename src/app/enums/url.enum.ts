@@ -5,31 +5,23 @@ export enum URLz {
 
   // ====================== GET CALLS ====================== //
 
-  // :::::::::::::  CONFIG LEVEL GETS ::::::::::::: //
   LOAD_ALL_CONFIG_DATA = "config/LoadAllConfigData",
-
-  // ::::::::::::::: COFIG DEMOGRAPHIC GETS:::::::::::: //
   CONFIG_DEMO_GRAPHIC = "Demographic/LoadConfigDemographicLevelsByParameters",
-
-
-  // ::::::::::::::: DEMOGRAPHIC SETUP GETS:::::::::::: //
-  // LoadPMDemographicLevelsByFilters
   LOAD_PM_DEMOGRAPHIC_LEVELS_BY_FILTERS = "Demographic/LoadPMDemographicLevelsByParent",
-
+  COFIG_ORGANIZATION_DEMO_GRAPHIC = "Organization/LoadConfigOrganizationLevelsByParameters",
+  PM_ORG_LEVEL_BY_LEVEL_ID = "Organization/LoadPMOrganizationLevelsByLevelId",
+  GET_ALL_DESIGNATION = "Designation/LoadAllDesignationData",
+  GET_ALL_GENDERS = "Gender/LoadAllGenderData",
 
 
   // =================== POST CALLS ===================== //
 
-  // ::::::::::::::: COFIG DEMOGRAPHIC POSTS:::::::::::: //
 
   SAVE_DEMOGRAPHIC_CONFIG_LIST = "Demographic/SaveDemographicsConfigList",
   SAVE_DEMOGRAPHIC_CONFIG = "Demographic/SaveDemographicsConfig",
-
-  // ::::::::::::::: DEMOGRAPHIC SETUP POSTS:::::::::::: //
-
   SAVE_DEMOGRAPHIC_SETUP = "Demographic/SaveDemographicSetup",
-
-
-  // :::::::::::::::: COMPANY MANAGEMENT :::::::::::::::::::: //
-  SAVE_LOAD_COMPANY_MANAGEMENT = "Company/SaveLoadCompanyManagement"
+  SAVE_ORG_SETUP = "Organization/SaveOrganizationSetup",
+  SAVE_LOAD_COMPANY_MANAGEMENT = "Company/SaveLoadCompanyManagement",
+  SAVE_DESIGNATION = "Designation/SaveDesignationSetup",
+  SAVE_GENDER = "Gender/SaveGender"
 }
