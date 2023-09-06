@@ -4,11 +4,11 @@ import { URLz } from 'src/app/enums/url.enum';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-marital-status',
-  templateUrl: './marital-status.component.html',
-  styleUrls: ['./marital-status.component.css']
+  selector: 'app-qualification-level',
+  templateUrl: './qualification-level.component.html',
+  styleUrls: ['./qualification-level.component.css']
 })
-export class MaritalStatusComponent extends BaseForm implements OnInit {
+export class QualificationLevelComponent extends BaseForm implements OnInit {
 
   constructor( injector : Injector) {
     super(injector);
@@ -21,8 +21,9 @@ export class MaritalStatusComponent extends BaseForm implements OnInit {
   initForm(){
     this._fs._form = this._fb.group({
       companyId:[1],
-      maritalStatusTitle:['',this._vs._val('Marital Status Title')],
-      maritalStatusPrefix:['', this._vs._val('Marital Status Prefix')],
+      qulificationLevelTitle:['',this._vs._val('Qulification Level Title')],
+      qulificationLevelPrefix:['', this._vs._val('Qulification Level Prefix')],
+      levelNo:['', this._vs._val('Level No. Prefix')],
       IsActive:['',this._vs._val('Is Active')]
     })
   }
@@ -35,7 +36,7 @@ export class MaritalStatusComponent extends BaseForm implements OnInit {
       if(this._fs._form.valid){
         this._http.create({
           url: environment.API_URL,
-          endpoint: URLz.SAVE_MARITAL_STATUS,
+          endpoint: URLz.SAVE_QUALIFICATION_LEVEL,
           body: this._fs._form.value
         })
         .subscribe((res)=>{

@@ -1,124 +1,126 @@
-      <!----------------- filters area ----------------->
-      <section class="search_filter_add_area">
-        <div class="col-12">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-12">
-                  <div class="row">
-                    <div class="col-12">
-                        <div class="Page__heading mb-0">
-                          <p>
-                              Weekly Off <span class="span__slesh">/</span> <span class="span__new">New</span>
-                          </p>
+<form [formGroup]="_fs._form" (ngSubmit)="submit()"   autocomplete="off">
+          <!----------------- filters area ----------------->
+          <section class="search_filter_add_area">
+            <div class="col-12">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-12">
+                      <div class="row">
+                        <div class="col-12">
+                            <div class="Page__heading mb-0">
+                              <p>
+                                  Weekly Off <span class="span__slesh">/</span> <span class="span__new">New</span>
+                              </p>
+                            </div>
                         </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                        <div class="save__discard__div">
-                          <a href="javascript:void(0);" class="third_bar_save">
-                              Save
-                          </a>
-                          <a href="javascript:void(0);" class="third_bar_discard">
-                              Discard
-                          </a>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                            <div class="save__discard__div">
+                              <button type="submit " class="third_bar_save save_btn">
+                                Save
+                              </button>
+                              <a href="javascript:void(0);" class="third_bar_discard">
+                                  Discard
+                              </a>
+                            </div>
                         </div>
-                    </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-      </section>
-  <!----------------- filters area ----------------->
-<!----------------- filters area ----------------->
-<!----------------- add area----------------->
-<section class="addAreaSection">
-    <div class="col-xl-10 col-lg-10 col-md-12 mx-auto">
-        <div class="add_box_card">
-            <h1>
-              Weekly Off
-            </h1>
-            <div class="add_contant_div">
-                  <div class="col-12">
-                      <div class="row m-0">
-                          <div class="col-lg-3 my-2">
-                              <div class="form-group my-0">
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="Monday">
-                                      <label class="form-check-label p-0 mt-1" for="Monday">
-                                          Monday
-                                      </label>
-                                    </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-3 my-2">
-                              <div class="form-group my-0">
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="Tuesday">
-                                      <label class="form-check-label p-0 mt-1" for="Tuesday">
-                                          Tuesday
-                                      </label>
-                                    </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-3 my-2">
-                              <div class="form-group my-0">
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="Wednesday">
-                                      <label class="form-check-label p-0 mt-1" for="Wednesday">
-                                          Wednesday
-                                      </label>
-                                    </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-3 my-2">
-                              <div class="form-group my-0">
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="Thursday">
-                                      <label class="form-check-label p-0 mt-1" for="Thursday">
-                                          Thursday
-                                      </label>
-                                    </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-3 my-2">
-                              <div class="form-group my-0">
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="Friday">
-                                      <label class="form-check-label p-0 mt-1" for="Friday">
-                                          Friday
-                                      </label>
-                                    </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-3 my-2">
-                              <div class="form-group my-0">
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="Saturday">
-                                      <label class="form-check-label p-0 mt-1" for="Saturday">
-                                          Saturday
-                                      </label>
-                                    </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-3 my-2">
-                              <div class="form-group my-0">
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="Sunday">
-                                      <label class="form-check-label p-0 mt-1" for="Sunday">
-                                          Sunday
-                                      </label>
-                                    </div>
-                              </div>
-                          </div>
                       </div>
                   </div>
-                  <!-- <div class="col-12 text-right mt-2">
-                      <button class="saveBtnStyle saveBtn levelTwoSave levelThreeSave">
-                          Save
-                      </button>
-                  </div> -->
+                </div>
             </div>
-        </div>
-    </div>
-</section>
-<!----------------- add area----------------->
+          </section>
+          <!----------------- filters area ----------------->
+          <!----------------- filters area ----------------->
+          <!----------------- add area----------------->
+          <section class="addAreaSection">
+              <div class="col-xl-10 col-lg-10 col-md-12 mx-auto">
+                  <div class="add_box_card">
+                      <h1>
+                        Weekly Off
+                      </h1>
+                      <div class="add_contant_div">
+                            <div class="col-12">
+                                <div class="row m-0">
+                                    <div class="col-lg-3 my-2">
+                                        <div class="form-group my-0">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Monday" formControlName="monday">
+                                                <label class="form-check-label p-0 mt-1" for="Monday">
+                                                    Monday
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 my-2">
+                                        <div class="form-group my-0">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Tuesday" formControlName="tuesday">
+                                                <label class="form-check-label p-0 mt-1" for="Tuesday">
+                                                    Tuesday
+                                                </label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 my-2">
+                                        <div class="form-group my-0">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Wednesday" formControlName="wednesday">
+                                                <label class="form-check-label p-0 mt-1" for="Wednesday">
+                                                    Wednesday
+                                                </label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 my-2">
+                                        <div class="form-group my-0">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Thursday" formControlName="thursday">
+                                                <label class="form-check-label p-0 mt-1" for="Thursday">
+                                                    Thursday
+                                                </label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 my-2">
+                                        <div class="form-group my-0">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Friday" formControlName="friday">
+                                                <label class="form-check-label p-0 mt-1" for="Friday">
+                                                    Friday
+                                                </label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 my-2">
+                                        <div class="form-group my-0">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Saturday" formControlName="saturday">
+                                                <label class="form-check-label p-0 mt-1" for="Saturday">
+                                                    Saturday
+                                                </label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 my-2">
+                                        <div class="form-group my-0">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Sunday" formControlName="sunday">
+                                                <label class="form-check-label p-0 mt-1" for="Sunday">
+                                                    Sunday
+                                                </label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-12 text-right mt-2">
+                                <button class="saveBtnStyle saveBtn levelTwoSave levelThreeSave">
+                                    Save
+                                </button>
+                            </div> -->
+                      </div>
+                  </div>
+              </div>
+          </section>
+          <!----------------- add area----------------->
+</form>

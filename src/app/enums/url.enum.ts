@@ -12,6 +12,12 @@ export enum URLz {
   PM_ORG_LEVEL_BY_LEVEL_ID = "Organization/LoadPMOrganizationLevelsByLevelId",
   GET_ALL_DESIGNATION = "Designation/LoadAllDesignationData",
   GET_ALL_GENDERS = "Gender/LoadAllGenderData",
+  GET_ALL_MARITAL = "MartialStatus/LoadAllMartialStatusData",
+  GET_ALL_POLICIES = "PolicyDefined/LoadAllPolicyDefinedData",
+  GET_ALL_RELIGION = "Religion/LoadAllReligionData",
+  GET_ALL_WEEKLY_OFFS = "WeeklyOff/LoadAllWeeklyOffData",
+  GET_ALL_GAZETTED_HOLIDAY = "GazettedHoliday/LoadAllGazettedHolidayData",
+  GET_ALL_QUALIFICATION_LEVEL = "QulificationLevel/LoadAllQualificationLevelData",
 
 
   // =================== POST CALLS ===================== //
@@ -23,5 +29,11 @@ export enum URLz {
   SAVE_ORG_SETUP = "Organization/SaveOrganizationSetup",
   SAVE_LOAD_COMPANY_MANAGEMENT = "Company/SaveLoadCompanyManagement",
   SAVE_DESIGNATION = "Designation/SaveDesignationSetup",
-  SAVE_GENDER = "Gender/SaveGender"
+  SAVE_GENDER = "Gender/SaveGender",
+  SAVE_MARITAL_STATUS = "MartialStatus/SaveMartialStatus",
+  SAVE_POLICY_DEFINED = "PolicyDefined/SavePolicyDefinedSetup",
+  SAVE_RELIGION = "Religion/SaveReligion",
+  SAVE_WEEKLY_OFFS = "WeeklyOff/SaveWeeklyOff",
+  SAVE_GAZETTED_HOLIDAY="GazettedHoliday/SaveGazettedHoliday",
+  SAVE_QUALIFICATION_LEVEL ="QulificationLevel/SaveQualificationLevel"
 }

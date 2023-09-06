@@ -10,6 +10,8 @@ import { MaritalStatusComponent } from './marital-status/marital-status.componen
 import { PolicyDefinedNameComponent } from './policy-defined-name/policy-defined-name.component';
 import { ReligionAddComponent } from './religion-add/religion-add.component';
 import { WeeklyOffAddComponent } from './weekly-off-add/weekly-off-add.component';
+import { GazettedHolidaysComponent } from './gazetted-holidays/gazetted-holidays.component';
+import { QualificationLevelComponent } from './qualification-level/qualification-level.component';
 
 const routes: Routes = [
   {
@@ -46,6 +48,14 @@ const routes: Routes = [
       {
         path: "weekly_off",
         component: WeeklyOffAddComponent,
+      },
+      {
+        path: "gazetted_holidays",
+        component: GazettedHolidaysComponent,
+      },
+      {
+        path: "qualification_level",
+        component: QualificationLevelComponent,
       },
     ]
   }
