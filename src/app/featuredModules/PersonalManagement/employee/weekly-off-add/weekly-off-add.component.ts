@@ -22,13 +22,13 @@ export class WeeklyOffAddComponent extends BaseForm implements OnInit {
   initForm(){
     this._fs._form = this._fb.group({
       companyId:[1],
-      monday:[''],
-      tuesday:[''],
-      wednesday:[''],
-      thursday:[''],
-      friday:[''],
-      saturday:[''],
-      sunday:[''],
+      monday:[false],
+      tuesday:[false],
+      wednesday:[false],
+      thursday:[false],
+      friday:[false],
+      saturday:[false],
+      sunday:[false],
       // IsActive:['',this._vs._val('Is Active')]
     })
   }
