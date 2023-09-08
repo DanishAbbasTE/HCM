@@ -9,6 +9,7 @@ import { HeaderComponent } from './common/header/header.component';
 import { SiderBarComponent } from './common/sider-bar/sider-bar.component';
 import { NgxModulesModule } from './thirdPartyModules/ngx-modules/ngx-modules.module';
 import { NgMaterialzModule } from './thirdPartyModules/ng-materialz/ng-materialz.module';
+import { DiPaginatorComponent } from './common/di-paginator/di-paginator.component';
 
 
 const commonModules = [
@@ -22,7 +23,8 @@ const commonModules = [
 
 const exportedComponents = [
   HeaderComponent,
-  SiderBarComponent
+  SiderBarComponent,
+  DiPaginatorComponent,
 ]
 
 @NgModule({

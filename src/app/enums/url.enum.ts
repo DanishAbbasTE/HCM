@@ -18,6 +18,8 @@ export enum URLz {
   GET_ALL_WEEKLY_OFFS = "WeeklyOff/LoadAllWeeklyOffData",
   GET_ALL_GAZETTED_HOLIDAY = "GazettedHoliday/LoadAllGazettedHolidayData",
   GET_ALL_QUALIFICATION_LEVEL = "QulificationLevel/LoadAllQualificationLevelData",
+  GET_ALL_PMDEMOGRAPHIC_LIST  = "Demographic/LoadAllPMDemographic",
+  GET_ALL_PM_ORGANIZATION_LIST = "Organization/LoadAllPMOrganization",
 
 
   // =================== POST CALLS ===================== //

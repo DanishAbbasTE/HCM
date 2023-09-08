@@ -59,7 +59,6 @@ export class ValidatorService extends AngularServiceInjector {
       return this.handleRequired(control);
     }
     if (control && control.touched){
-      console.log("or in this");
       return this.handleRequired(control);
     }
     return '';
@@ -86,9 +85,6 @@ export class ValidatorService extends AngularServiceInjector {
       this._toastr.error(msg, this.toTitleCase(error.field_name));
     });
   }
-
-
-
   _error_from_success(httpErrorResponse: any) {
     if (httpErrorResponse.data != undefined && httpErrorResponse.data != null) {
       const error_response = httpErrorResponse.data;
@@ -129,7 +125,12 @@ export class ValidatorService extends AngularServiceInjector {
             return VAL.MAX(param.max);
           else if (!RegExps.POSITIVENUM.test(a)) return VAL.NUM_POS;
           else return null;
-        } else if (param.alpha && !RegExps.ALPHA.test(a)) return VAL.ALPHA;
+        }
+        else if (param.alpha && !RegExps.ALPHA.test(a)){
+          console.log(control)
+          console.log(VAL.ALPHA);
+          return VAL.ALPHA;
+        }
         else if (param.alphaNum && !RegExps.ALPHANUM.test(a))
           return VAL.ALPHANUM;
         else if (param.hypenreg && !RegExps.HYPHEN_REG.test(a))

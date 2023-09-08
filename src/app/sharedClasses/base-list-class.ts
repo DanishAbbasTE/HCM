@@ -21,7 +21,7 @@ export abstract class BaseListClass extends BaseForm implements OnDestroy{
   // Components Properties
   _pathLocation: string | undefined;
   // Table Properties
-  _tbls: DI_Tables = {};
+  _tbls: DI_Tables | any = {};
   _tblsArray: any[] | undefined;
   listParam = {}
   _reset(tableName: string | any) {
@@ -86,8 +86,8 @@ export abstract class BaseListClass extends BaseForm implements OnDestroy{
   callAPI = (tableName: string, param: HttpServiceParam) => {
     this._http
     .gets(param).subscribe((res) => {
-      this._tbls[tableName].dataSource.data = res?.data?.records;
-      this._tbls[tableName].length = res?.data?.totalRecords;
+      this._tbls[tableName].dataSource.data = res?.data;
+      this._tbls[tableName].length = res?.data?.length;
     });
   }
   _formCreator(tbl: DI_Table) {

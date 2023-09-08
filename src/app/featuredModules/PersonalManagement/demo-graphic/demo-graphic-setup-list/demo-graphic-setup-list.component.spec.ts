@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DemoGraphicSetupComponent } from './demo-graphic-setup.component';
+import { DemoGraphicSetupComponent } from './demo-graphic-setup-list.component';
 
 describe('DemoGraphicSetupComponent', () => {
   let component: DemoGraphicSetupComponent;
