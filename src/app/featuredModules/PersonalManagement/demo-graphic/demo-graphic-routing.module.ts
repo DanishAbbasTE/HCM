@@ -12,6 +12,10 @@ const routes: Routes = [
       component: DemoGraphicComponent,
     },
     {
+      path: "demo_graphic_list",
+      component: DemoGraphicSetupComponent,
+    },
+    {
       path: "org_add",
       component: OrganizationAddComponent,
     }

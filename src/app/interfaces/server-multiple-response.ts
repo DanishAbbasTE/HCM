@@ -1,8 +1,16 @@
 export interface ServerMultipleResponse {
-  code: number;
-  data: {
-    records: any[];
-    totalRecords: number;
-  };
-  message: string;
+  responseCode: number;
+  responseType : string;
+  responseMessage : string;
+  data: any[];
+  totalRecords: number;
 }
+
+
+// responseCode: number;
+//   responseType : string;
+//   responseMessage : string;
+//   data: {
+//     records: any[];
+//     totalRecords: number;
+//   };

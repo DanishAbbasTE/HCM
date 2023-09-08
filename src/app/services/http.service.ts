@@ -27,9 +27,7 @@ import { AngularServiceInjector } from '../sharedClasses/angular-service-injecto
   6. All getter Observable Methods Return Type Must be
     a. ServerSingleResponse
     b. ServerMultipleResponse
-    c. ServerMultipleResponseDropDown
   7. All Supported Methods must be private
-
 */
 export class HTTPService extends AngularServiceInjector {
   private readonly url: string = environment.API_URL;

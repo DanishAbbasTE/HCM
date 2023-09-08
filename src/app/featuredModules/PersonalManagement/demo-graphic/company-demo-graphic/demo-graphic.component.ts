@@ -65,7 +65,9 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
       )
       .subscribe((val :any) => {
           console.log(val);
-          this.getDemoGraphicLevelchild(val);
+          if(this.emptyCheck(val)){
+            this.getDemoGraphicLevelchild(val);
+          }
       });
   }
 
@@ -73,7 +75,7 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
     this._fs._form = this._fb.group({
       companyId:[1],
       demographicLevelId:['',this._vs._vals('Demographic level id')],
-      demographicTitle:['',this._vs._val('Demographic Title',{min:4 , max:10})],
+      demographicTitle:['',this._vs._val('Demographic Title')],
       demographicPrefix:['', this._vs._val('Demographic Prefix')],
       parentId:['',this._vs._vals('Demographic')],
       geofencesValue:['',this._vs._val('Geofence value')],
@@ -95,9 +97,23 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
         .subscribe((res)=>{
             if(res != null){
                   console.log(res);
-                  this._vs._toastr_success('SuccessFully submited','success');
-                  this._fs._form.reset();
-                              }
+                  this._swl.prompts(
+                    {
+                      title: 'Save',
+                      text: "Want to leave or stay here",
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                      this._swl.swal('SuccessFully submited!', 'success', 'success').then((result) => {
+                        this._router.navigate(['/Personal_Management/demographic/demo_graphic_list'])
+                      })
+                      this._vs._toastr_success('SuccessFully submited','success');
+                    } else if (result.isDismissed) {
+                      this._swl.swal('SuccessFully submited!', 'success', 'success')
+                      this._vs._toastr_success('SuccessFully submited','success');
+                      this._fs._form.reset();
+                    }
+                  })
+            }
         })
       }
 
