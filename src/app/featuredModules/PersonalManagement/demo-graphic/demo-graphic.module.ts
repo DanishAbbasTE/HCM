@@ -6,12 +6,14 @@ import { DemoGraphicComponent } from './demo-graphic-setups/demo-graphic.compone
 import { DemoGraphicSetupComponent } from './demo-graphic-setup-list/demo-graphic-setup-list.component';
 import { SharedModule } from 'src/app/sharedModules/shared.module';
 import { OrganizationAddComponent } from './organization-add/organization-add.component';
+import { OrganizationListComponent } from './organization-list/organization-list.component';
 
 @NgModule({
   declarations: [
     DemoGraphicComponent,
     DemoGraphicSetupComponent,
-    OrganizationAddComponent
+    OrganizationAddComponent,
+    OrganizationListComponent
   ],
   imports: [
     CommonModule,

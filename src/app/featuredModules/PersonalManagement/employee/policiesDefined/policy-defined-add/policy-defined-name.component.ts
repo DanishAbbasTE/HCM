@@ -1,14 +1,15 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { BaseForm } from '../../../../sharedClasses/base-from';
+import { BaseForm } from '../../../../../sharedClasses/base-from';
 import { URLz } from 'src/app/enums/url.enum';
 import { environment } from 'src/environments/environment';
 
+
 @Component({
-  selector: 'app-marital-status',
-  templateUrl: './marital-status.component.html',
-  styleUrls: ['./marital-status.component.css']
+  selector: 'app-policy-defined-name',
+  templateUrl: './policy-defined-name.component.html',
+  styleUrls: ['./policy-defined-name.component.css']
 })
-export class MaritalStatusComponent extends BaseForm implements OnInit {
+export class PolicyDefinedNameComponent extends BaseForm implements OnInit {
 
   constructor( injector : Injector) {
     super(injector);
@@ -21,8 +22,8 @@ export class MaritalStatusComponent extends BaseForm implements OnInit {
   initForm(){
     this._fs._form = this._fb.group({
       companyId:[1],
-      maritalStatusTitle:['',this._vs._val('Marital Status Title')],
-      maritalStatusPrefix:['', this._vs._val('Marital Status Prefix')],
+      policyDefinedTitle:['',this._vs._val('policy Defined Title')],
+      policyDefinedPrefix:['', this._vs._val('policy Defined Prefix')],
       IsActive:['',this._vs._val('Is Active')]
     })
   }
@@ -35,7 +36,7 @@ export class MaritalStatusComponent extends BaseForm implements OnInit {
       if(this._fs._form.valid){
         this._http.create({
           url: environment.API_URL,
-          endpoint: URLz.SAVE_MARITAL_STATUS,
+          endpoint: URLz.SAVE_POLICY_DEFINED,
           body: this._fs._form.value
         })
         .subscribe((res)=>{

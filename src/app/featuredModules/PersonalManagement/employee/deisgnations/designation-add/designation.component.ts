@@ -1,14 +1,14 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { BaseForm } from '../../../../sharedClasses/base-from';
+import { BaseForm } from '../../../../../sharedClasses/base-from';
 import { URLz } from 'src/app/enums/url.enum';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-qualification-level',
-  templateUrl: './qualification-level.component.html',
-  styleUrls: ['./qualification-level.component.css']
+  selector: 'app-designation',
+  templateUrl: './designation.component.html',
+  styleUrls: ['./designation.component.css']
 })
-export class QualificationLevelComponent extends BaseForm implements OnInit {
+export class DesignationComponent extends BaseForm implements OnInit {
 
   constructor( injector : Injector) {
     super(injector);
@@ -21,9 +21,8 @@ export class QualificationLevelComponent extends BaseForm implements OnInit {
   initForm(){
     this._fs._form = this._fb.group({
       companyId:[1],
-      qulificationLevelTitle:['',this._vs._val('Qulification Level Title')],
-      qulificationLevelPrefix:['', this._vs._val('Qulification Level Prefix')],
-      levelNo:['', this._vs._val('Level No. Prefix')],
+      designationTitle:['',this._vs._val('Designation Title')],
+      designationPrefix:['', this._vs._val('Designation Prefix')],
       IsActive:['',this._vs._val('Is Active')]
     })
   }
@@ -36,7 +35,7 @@ export class QualificationLevelComponent extends BaseForm implements OnInit {
       if(this._fs._form.valid){
         this._http.create({
           url: environment.API_URL,
-          endpoint: URLz.SAVE_QUALIFICATION_LEVEL,
+          endpoint: URLz.SAVE_DESIGNATION,
           body: this._fs._form.value
         })
         .subscribe((res)=>{

@@ -1,15 +1,14 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { BaseForm } from '../../../../sharedClasses/base-from';
+import { BaseForm } from '../../../../../sharedClasses/base-from';
 import { URLz } from 'src/app/enums/url.enum';
 import { environment } from 'src/environments/environment';
 
-
 @Component({
-  selector: 'app-policy-defined-name',
-  templateUrl: './policy-defined-name.component.html',
-  styleUrls: ['./policy-defined-name.component.css']
+  selector: 'app-religion-add',
+  templateUrl: './religion-add.component.html',
+  styleUrls: ['./religion-add.component.css']
 })
-export class PolicyDefinedNameComponent extends BaseForm implements OnInit {
+export class ReligionAddComponent extends BaseForm implements OnInit {
 
   constructor( injector : Injector) {
     super(injector);
@@ -22,8 +21,8 @@ export class PolicyDefinedNameComponent extends BaseForm implements OnInit {
   initForm(){
     this._fs._form = this._fb.group({
       companyId:[1],
-      policyDefinedTitle:['',this._vs._val('policy Defined Title')],
-      policyDefinedPrefix:['', this._vs._val('policy Defined Prefix')],
+      religionTitle:['',this._vs._val('Religion Title')],
+      religionPrefix:['', this._vs._val('Religion Prefix')],
       IsActive:['',this._vs._val('Is Active')]
     })
   }
@@ -36,7 +35,7 @@ export class PolicyDefinedNameComponent extends BaseForm implements OnInit {
       if(this._fs._form.valid){
         this._http.create({
           url: environment.API_URL,
-          endpoint: URLz.SAVE_POLICY_DEFINED,
+          endpoint: URLz.SAVE_RELIGION,
           body: this._fs._form.value
         })
         .subscribe((res)=>{

@@ -1,8 +1,6 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import {MatDialogConfig } from '@angular/material/dialog';
 import { URLz } from 'src/app/enums/url.enum';
 import { BaseListClass } from '../../../../sharedClasses/base-list-class';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'demo-graphic-setup-list',

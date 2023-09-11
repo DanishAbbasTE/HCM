@@ -12,7 +12,7 @@ import { ToastrModule } from 'ngx-toastr';
       progressBar: true,
       closeButton: true,
       onActivateTick: false,
-      timeOut: 0,
+      timeOut: 5000,
       // toastClass: 'toast',
       positionClass: 'toast-top-right',
     }),

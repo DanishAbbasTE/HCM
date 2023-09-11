@@ -20,6 +20,14 @@ export enum URLz {
   GET_ALL_QUALIFICATION_LEVEL = "QulificationLevel/LoadAllQualificationLevelData",
   GET_ALL_PMDEMOGRAPHIC_LIST  = "Demographic/LoadAllPMDemographic",
   GET_ALL_PM_ORGANIZATION_LIST = "Organization/LoadAllPMOrganization",
+  GET_ALL_DESIGNATION_LIST = "Designation/LoadAllDesignationData",
+  GET_ALL_GENDER_LIST = "Gender/LoadAllGenderData",
+  GET_ALL_MARITAL_STATUS_LIST ="MartialStatus/LoadAllMartialStatusData",
+  GET_ALL_POLICY_DEFINED_LIST = "PolicyDefined/LoadAllPolicyDefinedData",
+  GET_ALL_RELIGION_LIST ="Religion/LoadAllReligionData",
+  GET_ALL_WEEKLY_OFF_LIST = "WeeklyOff/LoadAllWeeklyOffData",
+  GET_ALL_QUALIFICATION_LEVEL_LIST ="QulificationLevel/LoadAllQualificationLevelData",
+
 
 
   // =================== POST CALLS ===================== //

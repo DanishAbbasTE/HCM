@@ -1,5 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { BaseForm } from '../../../../sharedClasses/base-from';
+import { BaseForm } from '../../../../../sharedClasses/base-from';
 import { URLz } from 'src/app/enums/url.enum';
 import { environment } from 'src/environments/environment';
 

@@ -1,14 +1,14 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { BaseForm } from '../../../../sharedClasses/base-from';
+import { BaseForm } from '../../../../../sharedClasses/base-from';
 import { URLz } from 'src/app/enums/url.enum';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-gender-add',
-  templateUrl: './gender-add.component.html',
-  styleUrls: ['./gender-add.component.css']
+  selector: 'app-marital-status',
+  templateUrl: './marital-status.component.html',
+  styleUrls: ['./marital-status.component.css']
 })
-export class GenderAddComponent extends BaseForm implements OnInit {
+export class MaritalStatusComponent extends BaseForm implements OnInit {
 
   constructor( injector : Injector) {
     super(injector);
@@ -21,8 +21,8 @@ export class GenderAddComponent extends BaseForm implements OnInit {
   initForm(){
     this._fs._form = this._fb.group({
       companyId:[1],
-      genderTitle:['',this._vs._val('Gender Title')],
-      genderPrefix:['', this._vs._val('Gender Prefix')],
+      maritalStatusTitle:['',this._vs._val('Marital Status Title')],
+      maritalStatusPrefix:['', this._vs._val('Marital Status Prefix')],
       IsActive:['',this._vs._val('Is Active')]
     })
   }
@@ -35,7 +35,7 @@ export class GenderAddComponent extends BaseForm implements OnInit {
       if(this._fs._form.valid){
         this._http.create({
           url: environment.API_URL,
-          endpoint: URLz.SAVE_GENDER,
+          endpoint: URLz.SAVE_MARITAL_STATUS,
           body: this._fs._form.value
         })
         .subscribe((res)=>{
