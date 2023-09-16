@@ -25,12 +25,12 @@ export class DemoGraphicSetupComponent extends BaseListClass implements OnInit {
     this.initForm();
     this._tbls[URLz.GET_ALL_PMDEMOGRAPHIC_LIST].columns = [
       'id',
-      'actions',
-      'company_id',
-      'demographic_level_id',
+      // 'actions',
+      // 'company_id',
+      'demographic_level_title',
       'demo_graphic_title',
       'demo_graphic_prefix',
-      'parent_id',
+      'parent_name',
       'geofences_value',
       'is_active',
       'created_date',

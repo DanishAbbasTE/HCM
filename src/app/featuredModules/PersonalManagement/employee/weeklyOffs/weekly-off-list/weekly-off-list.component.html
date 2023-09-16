@@ -216,51 +216,65 @@
                       {{item?.companyId}} </td>
                   </ng-container>
                   <ng-container matColumnDef="monday">
-                    <th class="pr-3" mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition='before'>
+                    <th class="pl-3" mat-header-cell *matHeaderCellDef>
                         {{'Monday'}}
                     </th>
-                    <td class="px-3" mat-cell *matCellDef="let item"> {{item?.monday}} </td>
+                    <td class="px-3" mat-cell *matCellDef="let item">
+                      <input type="checkbox"  [disabled]='true'  [checked]='item?.monday'  id="{{ item?.monday}}">
+                    </td>
                   </ng-container>
                   <ng-container matColumnDef="tuesday">
-                    <th class="pr-3" mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition='before'>
+                    <th class="pl-3" mat-header-cell *matHeaderCellDef>
                         {{'Tuesday'}}
                     </th>
-                    <td class="px-3" mat-cell *matCellDef="let item"> {{item?.tuesday}} </td>
+                    <td class="px-3" mat-cell *matCellDef="let item">
+                      <input type="checkbox"  [disabled]='true'  [checked]='item?.tuesday'  id="{{ item?.tuesday}}">
+                    </td>
                   </ng-container>
                   <ng-container matColumnDef="wednesday">
-                    <th class="pr-3" mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition='before'>
+                    <th class="pl-3" mat-header-cell *matHeaderCellDef>
                         {{'Wednesday'}}
                     </th>
-                    <td class="px-3" mat-cell *matCellDef="let item"> {{item?.wednesday}} </td>
+                    <td class="px-3" mat-cell *matCellDef="let item">
+                      <input type="checkbox"  [disabled]='true'  [checked]='item?.wednesday' id="{{ item?.wednesday}}">
+                    </td>
                   </ng-container>
                   <ng-container matColumnDef="thursday">
-                    <th class="pr-3" mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition='before'>
+                    <th class="pl-3" mat-header-cell *matHeaderCellDef>
                         {{'Thursday'}}
                     </th>
-                    <td class="px-3" mat-cell *matCellDef="let item"> {{item?.thursday}} </td>
+                    <td class="px-3" mat-cell *matCellDef="let item">
+                      <input type="checkbox"  [disabled]='true'  [checked]='item?.thursday' id="{{ item?.thursday}}">
+                    </td>
                   </ng-container>
                   <ng-container matColumnDef="friday">
-                    <th class="pr-3" mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition='before'>
+                    <th class="pl-3" mat-header-cell *matHeaderCellDef>
                         {{'Friday'}}
                     </th>
-                    <td class="px-3" mat-cell *matCellDef="let item"> {{item?.friday}} </td>
+                    <td class="px-3" mat-cell *matCellDef="let item">
+                      <input type="checkbox"  [disabled]='true'  [checked]='item?.friday'  id="{{ item?.friday}}">
+                    </td>
                   </ng-container>
                   <ng-container matColumnDef="saturday">
-                    <th class="pr-3" mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition='before'>
+                    <th class="pl-3" mat-header-cell *matHeaderCellDef>
                         {{'Saturday'}}
                     </th>
-                    <td class="px-3" mat-cell *matCellDef="let item"> {{item?.saturday}} </td>
+                    <td class="px-3" mat-cell *matCellDef="let item">
+                      <input type="checkbox"  [disabled]='true'  [checked]='item?.saturday'  id="{{ item?.saturday}}">
+                    </td>
                   </ng-container>
                   <ng-container matColumnDef="sunday">
-                    <th class="pr-3" mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition='before'>
+                    <th class="pl-3" mat-header-cell *matHeaderCellDef>
                         {{'Sunday'}}
                     </th>
-                    <td class="px-3" mat-cell *matCellDef="let item"> {{item?.sunday}} </td>
+                    <td class="px-3" mat-cell *matCellDef="let item">
+                      <input type="checkbox"  [disabled]='true'  [checked]='item?.sunday'  id="{{ item?.sunday}}">
+                    </td>
                   </ng-container>
                   <ng-container matColumnDef="is_active">
                     <th mat-header-cell *matHeaderCellDef>{{'Is Active'}}</th>
                     <td class="pr-3" mat-cell *matCellDef="let item">
-                      {{ item?.isActive}}
+                      <input type="checkbox"  [disabled]='true'  [checked]='item?.isActive'  id="{{ item?.isActive}}">
                     </td>
                   </ng-container>
                   <ng-container matColumnDef="created_date">
@@ -277,7 +291,7 @@
                   </ng-container>
                   <tr mat-header-row *matHeaderRowDef="this._tbls[URLz.GET_ALL_WEEKLY_OFF_LIST].columns; sticky:true">
                   </tr>
-                  <tr mat-row *matRowDef="let row; columns: this._tbls[URLz.GET_ALL_WEEKLY_OFF_LIST].columns;"></tr>
+                  <tr mat-row *matRowDef="let row; columns: this._tbls[URLz.GET_ALL_WEEKLY_OFF_LIST].columns;" (click)="_switch(row.id)"></tr>
                 </table>
               </div>
               <!-- <di-paginator [tbl]="_tbls[URLz.GET_ALL_WEEKLY_OFF_LIST]" (paginateEvent)="_refresh(URLz.GET_ALL_WEEKLY_OFF_LIST)"></di-paginator> -->

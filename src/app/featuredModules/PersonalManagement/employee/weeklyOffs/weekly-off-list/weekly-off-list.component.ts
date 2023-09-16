@@ -25,8 +25,8 @@ export class WeeklyOffListComponent extends BaseListClass implements OnInit {
     this.initForm();
     this._tbls[URLz.GET_ALL_WEEKLY_OFF_LIST].columns = [
       'id',
-      'actions',
-      'company_id',
+      // 'actions',
+      // 'company_id',
       'monday',
       'tuesday',
       'wednesday',

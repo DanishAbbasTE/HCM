@@ -16,12 +16,15 @@
           <div class="row">
             <div class="col-12">
               <div class="save__discard__div">
-                <button type="submit " class="third_bar_save save_btn">
+                <button type="submit " *ngIf="_showSave" class="third_bar_save save_btn">
                   Save
                 </button>
-                <a href="javascript:void(0);" class="third_bar_discard">
+                <button type="button" *ngIf="_showEdit" class="third_bar_save save_btn" (click)="enableForm()">
+                  Edit
+                </button>
+                <button  class="third_bar_discard save_btn">
                   Discard
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -60,7 +63,7 @@
                       <label class="col-sm-2 col-form-label">Demographic Value</label>
                       <div class="col-sm-10">
                         <select class="form-control" formControlName="parentId">
-                          <option selected>Select</option>
+                          <option [value]="0">Select</option>
                           <option *ngFor="let level of childlevels" [value]="level.id">
                             {{level.title}}
                           </option>
@@ -95,7 +98,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-12 my-2">
+                  <div class="col-lg-12 my-2" *ngIf="_activeId">
                     <div class="form-group row my-0">
                         <label class="col-sm-2 col-form-label">Is Active</label>
                         <div class="col-sm-10">

@@ -25,8 +25,8 @@ export class GenderListComponent extends BaseListClass implements OnInit {
     this.initForm();
     this._tbls[URLz.GET_ALL_GENDER_LIST].columns = [
       'id',
-      'actions',
-      'company_id',
+      // 'actions',
+      // 'company_id',
       'gender_title',
       'gender_prefix',
       'is_active',

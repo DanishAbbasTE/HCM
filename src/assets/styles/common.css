@@ -216,6 +216,7 @@ animation: showSlow 0.5s ease forwards;
 /* table styling */
 table.mat-table tr{
   height: fit-content;
+  cursor: pointer;
 }
 table.mat-table tr:nth-child(even){
   background: white;

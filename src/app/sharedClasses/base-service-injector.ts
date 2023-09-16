@@ -34,7 +34,10 @@ export abstract class BaseServiceInjector extends AngularServiceInjector   {
   param: HttpServiceParam = {}; // Override this Property for Default Behaviour of HTTP Request
 
   // Guard Related Properties
-  _activeId: string | undefined;
+  _activeId: string | any;
+  _showSave : boolean | any = true;
+  _showEdit : boolean | any = false;
+
   _isExist: boolean | undefined;
 
   subscriptionArray: Subscription[] = [];
