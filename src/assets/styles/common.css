@@ -211,3 +211,35 @@ animation: showSlow 0.5s ease forwards;
   margin-right: 10px;
   font-size: 15px;
 }
+
+
+/* table styling */
+table.mat-table tr{
+  height: fit-content;
+}
+table.mat-table tr:nth-child(even){
+  background: white;
+}
+table.mat-table tr:nth-child(odd){
+  background: #fcfcfc;
+}
+table.mat-table thead tr{
+  background: white !important;
+}
+table.mat-table .mat-header-cell{
+  padding: 10px;
+  color: #212529;
+  font-size: 14px;
+    text-align: center;
+}
+table.mat-table td.mat-cell{
+  padding: 5px 10px;
+  color: #212529;
+  font-size: 13px;
+  text-align: center;
+}
+table.mat-table .fa-edit{
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}

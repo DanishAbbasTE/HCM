@@ -195,14 +195,14 @@
                   mat-table matSort [dataSource]="_tbls[URLz.GET_ALL_WEEKLY_OFF_LIST].dataSource" style="box-shadow: none;"
                   (matSortChange)="_sort($event, URLz.GET_ALL_WEEKLY_OFF_LIST)">
                   <ng-container matColumnDef="id">
-                    <th style="width: 40px" mat-header-cell *matHeaderCellDef>{{'S No'}}</th>
+                    <th style="width: 40px" mat-header-cell *matHeaderCellDef>{{'No.'}}</th>
                     <td mat-cell *matCellDef="let item; let i = index">
                       {{i + (_tbls[URLz.GET_ALL_WEEKLY_OFF_LIST].index * _tbls[URLz.GET_ALL_WEEKLY_OFF_LIST].size) + 1}}
                     </td>
                   </ng-container>
                   <ng-container matColumnDef="actions">
                     <th class="pl-3" mat-header-cell *matHeaderCellDef>
-                      <i class="fa fa-refresh text-info pointer px-2"
+                      <i class="fas fa-redo text-info pointer px-2"
                         (click)="_reset(URLz.GET_ALL_WEEKLY_OFF_LIST);_refresh(URLz.GET_ALL_WEEKLY_OFF_LIST)"></i>
                       <i class="fa fa-search text-info pointer px-2" (click)="_refresh(URLz.GET_ALL_WEEKLY_OFF_LIST)"></i>
                     </th>
