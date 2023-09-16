@@ -159,6 +159,8 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
                       this._swl.swal('SuccessFully submited!', 'success', 'success')
                       this._vs._toastr_success('SuccessFully submited','success');
                       this._fs._form.reset();
+                      this._fs._form.get('companyId').patchValue(1);
+                      this._fs._form.get('IsActive').patchValue(true);
                     }
                   })
             }
