@@ -8,6 +8,7 @@ import { ServerMultipleResponse } from '../interfaces/server-multiple-response';
 import { ServerSingleResponse } from '../interfaces/server-single-response';
 import { HttpServiceParam } from '../interfaces/http-service-param';
 import { AngularServiceInjector } from '../sharedClasses/angular-service-injector';
+import { ServerMultipleResponseListing } from '../interfaces/server-multiple-response-listing';
 
 @Injectable({
   providedIn: 'root',
@@ -55,6 +56,18 @@ export class HTTPService extends AngularServiceInjector {
         })
       );
   }
+
+
+  getListing(param: Partial<HttpServiceParam>): Observable<ServerMultipleResponseListing> {
+    return this.http
+      .get<ServerMultipleResponseListing>(this.finalResult(param))
+      .pipe(
+        catchError((error) => {
+          return this.handleError(error, param)
+        })
+      );
+  }
+
   create(param: Partial<HttpServiceParam>): Observable<any> {
     return this.http
       .post(this.finalResult(param), param.body)

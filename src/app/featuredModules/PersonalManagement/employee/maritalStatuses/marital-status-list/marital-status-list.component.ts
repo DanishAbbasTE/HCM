@@ -25,8 +25,8 @@ export class MaritalStatusListComponent extends BaseListClass implements OnInit 
     this.initForm();
     this._tbls[URLz.GET_ALL_MARITAL_STATUS_LIST].columns = [
       'id',
-      'actions',
-      'company_id',
+      // 'actions',
+      // 'company_id',
       'marital_status_title',
       'marital_status_prefix',
       'is_active',

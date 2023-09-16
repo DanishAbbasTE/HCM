@@ -34,6 +34,7 @@ export class SwalService extends AngularServiceInjector {
       confirmButtonColor: '#3085d6',
       confirmButtonText: '<i class="fas fa-thumbs-up"></i>',
       reverseButtons: true,
+      allowOutsideClick: false
     });
   }
   public noDataFound() {
@@ -49,6 +50,7 @@ export class SwalService extends AngularServiceInjector {
       confirmButtonColor: '#3085d6',
       cancelButtonText: '<i class="fas fa-times"></i>',
       confirmButtonText: '<i class="fas fa-thumbs-up"></i>',
+      allowOutsideClick: false,
       reverseButtons: true,
       ...options,
       title,

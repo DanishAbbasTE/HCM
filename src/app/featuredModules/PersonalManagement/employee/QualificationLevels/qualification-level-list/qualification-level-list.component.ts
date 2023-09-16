@@ -25,8 +25,8 @@ export class QualificationLevelListComponent extends BaseListClass implements On
     this.initForm();
     this._tbls[URLz.GET_ALL_QUALIFICATION_LEVEL_LIST].columns = [
       'id',
-      'actions',
-      'company_id',
+      // 'actions',
+      // 'company_id',
       'qulification_level_title',
       'qulification_level_prefix',
       'level_no',

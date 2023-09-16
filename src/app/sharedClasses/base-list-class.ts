@@ -75,8 +75,8 @@ export abstract class BaseListClass extends BaseForm implements OnDestroy{
         ...this._tbls[tableName]?.form?.value,
         ...this._tbls[tableName]?.formFilter?.value,
         ...this._tbls[tableName]?.query,
-        limit: this._tbls[tableName].size,
-        page: this._tbls[tableName].index + 1,
+        pageSize: this._tbls[tableName].size,
+        pageNumber: this._tbls[tableName].index + 1,
         order_by: this._tbls[tableName].orderBy,
         order_type: this._tbls[tableName].orderType,
       },
@@ -85,9 +85,9 @@ export abstract class BaseListClass extends BaseForm implements OnDestroy{
   }
   callAPI = (tableName: string, param: HttpServiceParam) => {
     this._http
-    .gets(param).subscribe((res) => {
-      this._tbls[tableName].dataSource.data = res?.data;
-      this._tbls[tableName].length = res?.data?.length;
+    .getListing(param).subscribe((res) => {
+      this._tbls[tableName].dataSource.data = res?.data?.data;
+      this._tbls[tableName].length = res?.data?.recordsTotal;
     });
   }
   _formCreator(tbl: DI_Table) {

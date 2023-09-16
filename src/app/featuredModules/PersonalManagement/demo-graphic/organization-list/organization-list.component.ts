@@ -25,12 +25,12 @@ export class OrganizationListComponent extends BaseListClass implements OnInit {
     this.initForm();
     this._tbls[URLz.GET_ALL_PM_ORGANIZATION_LIST].columns = [
       'id',
-      'actions',
-      'company_id',
-      'organization_level_id',
+      // 'actions',
+      // 'company_id',
+      'organization_level_title',
       'organization_title',
       'organization_prefix',
-      'parent_id',
+      'parent_name',
       'is_active',
       'created_date',
       'modified_date'

@@ -25,8 +25,8 @@ export class DesignationListComponent extends BaseListClass implements OnInit {
     this.initForm();
     this._tbls[URLz.GET_ALL_DESIGNATION_LIST].columns = [
       'id',
-      'actions',
-      'company_id',
+      // 'actions',
+      // 'company_id',
       'designation_title',
       'designation_prefix',
       'is_active',

@@ -25,8 +25,8 @@ export class PoliciyDefinedListComponent extends BaseListClass implements OnInit
     this.initForm();
     this._tbls[URLz.GET_ALL_POLICY_DEFINED_LIST].columns = [
       'id',
-      'actions',
-      'company_id',
+      // 'actions',
+      // 'company_id',
       'policy_defined_title',
       'policy_defined_prefix',
       'is_active',

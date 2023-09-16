@@ -64,16 +64,40 @@ export class FormHelperService extends AngularServiceInjector {
   //   }
   // }
 
-  _disable_Form_Controls(group: any){
+
+
+  _disable_FC(group: FormGroup | any){
+    for(const key in (group as FormGroup).controls) {
+      group.get(key).disable();
+    }
+  }
+
+  _enable_FC(group: FormGroup | any){
+    for(const key in (group as FormGroup).controls) {
+      group.get(key).enable();
+    }
+  }
+
+  _disable_Form_Controls(group: FormGroup){
     for(const key in (this._fs._form.get(group) as FormGroup).controls) {
       this._fs._form.get(group).get(key).disable();
     }
   }
 
-  _enable_form_Controls(group: any){
+
+  _enable_form_Controls(group: FormGroup){
     for(const key in (this._fs._form.get(group) as FormGroup).controls) {
       this._fs._form.get(group).get(key).enable();
     }
+  }
+
+
+  _disable_Single_FC(control: string){
+    this._fs._form.get(control).disable();
+  }
+
+  _enable_Single_FC(control: string){
+    this._fs._form.get(control).enable();
   }
 
   // openSnackBar(message: string, action: string | undefined, horizontal: string | any , vertical: string | any) {
