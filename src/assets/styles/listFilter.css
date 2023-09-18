@@ -149,22 +149,38 @@
 
 /*----------------- section 4 -----------------*/
 .search_filter_add_area .other__filter .top__pagination {
-	margin-top: -4px;
 	text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
 }
-
+.search_filter_add_area .other__filter .top__pagination span{
+    margin-right: 5px;
+    color: #8b8b8b;   
+}
 .search_filter_add_area .other__filter .top__pagination button {
-	border: 0px;
-	background: transparent;
+    background: #f3f4f6;
+    border: 0px;
+    padding: 7px 10px;
+    margin: 0px 1px;
+    
 }
-
+.search_filter_add_area .other__filter .top__pagination button:nth-child(2){
+    border-radius: 5px 0px 0px 5px;
+}
+.search_filter_add_area .other__filter .top__pagination button:nth-child(3){
+    border-radius: 0px 5px 5px 0px;
+}
 .search_filter_add_area .other__filter .top__pagination button:hover {
 	background: #f0f0f0;
 }
 
 .search_filter_add_area .other__filter .top__pagination button a {
-	color: #575757;
-	font-size: 20px;
+	color: #8b8b8b;
+    font-size: 20px;
+    display: flex;
 }
 
 /*----------------- section 4 -----------------*/
@@ -172,20 +188,28 @@
 .search_filter_add_area .other__filter .list__type__btns{
     display: flex;
     flex-wrap: nowrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 .search_filter_add_area .other__filter .list__type__btns a {
 	border: 0px;
-    background: transparent;
+    background: #e7e9ed;
     padding: 5px 10px 3px 10px;
+    margin: 0px 1px;
 }
-
+.search_filter_add_area .other__filter .list__type__btns a:nth-child(1){
+    border-radius: 5px 0px 0px 5px;
+}
+.search_filter_add_area .other__filter .list__type__btns a:nth-child(2){
+    border-radius: 0px 5px 5px 0px;
+}
 .search_filter_add_area .other__filter .list__type__btns a:hover {
-	background: #f0f0f0;
+    background: #d4d4d4;
 }
 
 .search_filter_add_area .other__filter .list__type__btns a.active {
-	background: #f0f0f0;
+    color: #111827;
+    background-color: #e6f2f3;
+    border: 1px solid #017e84;
 }
 
 .search_filter_add_area .other__filter .list__type__btns a span {
@@ -294,7 +318,8 @@
 }
 .grid_list_area_sideBar_area .side_bar_tabs .side_bar_tabs_heading{
     font-size: 15px;
-    color: var(--nav1-main-menu-text-color);   
+    color: #8b8b8b;   
+    font-weight: bolder;
 }
 .grid_list_area_sideBar_area .side_bar_tabs .side_bar_tabs_heading span{
     margin-right: 5px;
