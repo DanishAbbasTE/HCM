@@ -144,23 +144,24 @@ export class DemoGraphicComponent extends BaseForm implements OnInit {
         })
         .subscribe((res)=>{
             if(res != null){
-                  console.log(res);
-                  this._swl.prompts(
-                    {
+                  this._swl.prompts({
                       title: this._activeId ? 'Update' :'Save',
                       text: "Want to leave or stay here",
                     }).then((result) => {
-                    if (result.isConfirmed) {
-                      this._swl.swal('SuccessFully submited!', 'success', 'success').then((result) => {
-                        this._router.navigate(['/Personal_Management/demographic/demo_graphic_list'])
+                      if (result.isConfirmed) {
+                        this._swl.swal('SuccessFully submited!', 'success', 'success').then((result) => {
+                        this._fhs.relocate('/Personal_Management/demographic/demo_graphic_list')
                       })
                       this._vs._toastr_success('SuccessFully submited','success');
                     } else if (result.isDismissed) {
-                      this._swl.swal('SuccessFully submited!', 'success', 'success')
-                      this._vs._toastr_success('SuccessFully submited','success');
-                      this._fs._form.reset();
-                      this._fs._form.get('companyId').patchValue(1);
-                      this._fs._form.get('IsActive').patchValue(true);
+                        this._swl.swal('SuccessFully submited!', 'success', 'success')
+                        this._vs._toastr_success('SuccessFully submited','success');
+                        this._fs._form.reset();
+                        this._fs._form.removeControl('id');
+                        this._fhs.relocate('/Personal_Management/demographic/demo_graphic');
+                        this._fs._form.get('companyId').patchValue(1);
+                        this._activeId = '';
+                        this._fs._form.get('IsActive').patchValue(true);
                     }
                   })
             }

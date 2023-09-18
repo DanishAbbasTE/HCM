@@ -15,6 +15,7 @@ import {
   HTTP_INTERCEPTORS,
 } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,14 @@ import { DatePipe } from '@angular/common';
     HttpClientModule
   ],
   exports:[HttpClientModule],
-  providers: [DatePipe],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true,
+    },
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

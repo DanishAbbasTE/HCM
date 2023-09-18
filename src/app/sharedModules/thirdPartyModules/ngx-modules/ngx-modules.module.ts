@@ -15,7 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
       timeOut: 5000,
       // toastClass: 'toast',
       positionClass: 'toast-top-right',
-    }),
+    })
   ]
 })
 export class NgxModulesModule { }

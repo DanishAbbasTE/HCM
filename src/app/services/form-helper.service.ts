@@ -187,6 +187,9 @@ export class FormHelperService extends AngularServiceInjector {
     this._router.navigate([pathLocation]);
   }
 
+  relocate(pathLocation: string = ''){
+    this._router.navigate([pathLocation]);
+  }
 
   removeEmpty(obj: { [s: string]: unknown; } | ArrayLike<unknown>) {
     return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != ''));
