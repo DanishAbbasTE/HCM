@@ -1,0 +1,22 @@
+<div class="col-lg-2 col-md-2 col-12 side_bar_tabs">
+  <div class="side_bar_tabs_div">
+      <p class="side_bar_tabs_heading">
+          <span>
+              <i class="fa fa-users"></i>
+          </span>
+          {{sideBarName}}
+      </p>
+      <div class="side_bar_tab_here">
+          <div *ngFor="let data of SideBarData">
+              <a href="javascript:void(0);" class="sideTabs showOnliAmin" (click)="getFilteredRecords(data.levelId)">
+                  <span>
+                      {{data.demographicTitle}}
+                  </span>
+                  <span>
+                    {{data.pmDemoGraphicCount}}
+                  </span>
+              </a>
+          </div>
+      </div>
+  </div>
+</div>

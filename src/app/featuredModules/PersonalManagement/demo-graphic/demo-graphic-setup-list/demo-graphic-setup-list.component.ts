@@ -44,8 +44,15 @@ export class DemoGraphicSetupComponent extends BaseListClass implements OnInit {
   initForm(){
     this._tbls[URLz.GET_ALL_PMDEMOGRAPHIC_LIST].formFilter = this._fs._fb.group({
       companyId:[1],
+      levelId:[null]
     })
 
+  }
+
+
+  filteredRecords(id:number){
+    this._tbls[URLz.GET_ALL_PMDEMOGRAPHIC_LIST].formFilter.get('levelId').patchValue(id, {emitEvent: false})
+    this._refresh(URLz.GET_ALL_PMDEMOGRAPHIC_LIST)
   }
 
 }

@@ -148,7 +148,7 @@
                           <div class="col-lg-4 d-none  d-xl-block"></div>
                           <div class="col-xl-8 col-lg-12">
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-4 on__desk__px_1 on__res__pr_0">
+                                <div style="visibility: hidden;" class="col-lg-6 col-md-6 col-sm-6 col-4 on__desk__px_1 on__res__pr_0">
                                   <div class="top__pagination">
                                       <span>1-4/1</span>
                                       <button>
@@ -198,45 +198,9 @@
   <section class="grid_list_area_sideBar_area">
     <div class="col-12">
         <div class="row">
-          <div class="col-lg-2 col-md-2 col-12 side_bar_tabs">
-            <div class="side_bar_tabs_div">
-                <p class="side_bar_tabs_heading">
-                    <span>
-                        <i class="fa fa-users"></i>
-                    </span>
-                    DEPARTMENT
-                </p>
-                <div class="side_bar_tab_here">
-                    <div>
-                        <a href="javascript:void(0);" class="sideTabs active showAll">
-                           <span>
-                            All
-                           </span>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="javascript:void(0);" class="sideTabs showOnliAmin">
-                            <span>
-                                Administration
-                            </span>
-                            <span>
-                                2
-                            </span>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="javascript:void(0);" class="sideTabs showOnliHR">
-                            <span>
-                                HR
-                            </span>
-                            <span>
-                                1
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+            <sider-bar [url]="URLz.GET_DEMOGRAPHIC_SIDE_BAR" sideBarName="Levels" (filterList)='filteredRecords($event)' ></sider-bar>
+
             <div class="col-lg-10 col-md-10 col-12 ml-auto p-0 list__view__col">
               <div class="list__view__div table-responsive">
                 <div class="mat_table">

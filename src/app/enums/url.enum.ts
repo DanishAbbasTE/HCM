@@ -36,6 +36,14 @@ export enum URLz {
 
   GE_DEMO_GRAPHIC_BY_ID = "Demographic/GetPMDemographicById",
 
+  // ================== GET ONE ======================== //
+
+  // ================== GET SIDE BAR =================== //
+
+  GET_DEMOGRAPHIC_SIDE_BAR = "Demographic/DemographicSideBar",
+  GET_ORGANIZATION_SIDE_BAR = "Organization/OrganizationSideBar",
+
+
 
 
   // =================== POST CALLS ===================== //

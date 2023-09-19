@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from 'src/app/sharedModules/shared.module';
+import { SharedModule } from 'src/app/sharedModulesAndCmp/shared.module';
 
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { DesignationComponent } from './deisgnations/designation-add/designation.component';

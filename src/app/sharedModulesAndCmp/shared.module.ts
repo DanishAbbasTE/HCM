@@ -6,12 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgxSpinnerModule } from "ngx-spinner";
 
-import { HeaderComponent } from './common/header/header.component';
-import { SiderBarComponent } from './common/sider-bar/sider-bar.component';
+import { HeaderComponent } from './commonSharedComponents/header/header.component';
+import { SiderBarComponent } from './commonSharedComponents/sider-bar/sider-bar.component';
 import { NgxModulesModule } from './thirdPartyModules/ngx-modules/ngx-modules.module';
 import { NgMaterialzModule } from './thirdPartyModules/ng-materialz/ng-materialz.module';
-import { DiPaginatorComponent } from './common/di-paginator/di-paginator.component';
-import {LoaderComponent} from './common/loader/loader.component';
+import { DiPaginatorComponent } from './commonSharedComponents/di-paginator/di-paginator.component';
+import {LoaderComponent} from './commonSharedComponents/loader/loader.component';
 
 const commonModules = [
   FormsModule,
