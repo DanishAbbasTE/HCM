@@ -76,4 +76,21 @@ export abstract class Custom {
   public static emptyCheck(val: string | Date | null | undefined) {
     return val != undefined && val != null && val != '';
   }
+
+
+  public static gridActive() {
+    const gridElements = document.querySelectorAll('.grid__view__col');
+    const listElements = document.querySelectorAll('.list__view__col');
+
+    gridElements.forEach(element => element.classList.remove('d-none'));
+    listElements.forEach(element => element.classList.add('d-none'));
+  }
+
+  public static listActive() {
+    const gridElements = document.querySelectorAll('.grid__view__col');
+    const listElements = document.querySelectorAll('.list__view__col');
+
+    gridElements.forEach(element => element.classList.add('d-none'));
+    listElements.forEach(element => element.classList.remove('d-none'));
+  }
 }

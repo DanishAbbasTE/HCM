@@ -166,12 +166,12 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-6 on__desk__px_1">
                                   <div class="list__type__btns">
                                     <!-- use active class for show active -->
-                                     <a href="javascript:void(0);" class="g_l_Active " onclick="gridActive();">
+                                     <a href="javascript:void(0);" class="g_l_Active " (click)="custom.gridActive()">
                                         <span>
                                         <i class="fa fa-th-large"></i>
                                         </span>
                                      </a>
-                                     <a href="javascript:void(0);" class="g_l_Active" onclick="listActive();">
+                                     <a href="javascript:void(0);" class="g_l_Active" (click)="custom.listActive()">
                                         <span>
                                         <i class="fa fa-bars"></i>
                                         </span>
@@ -200,8 +200,40 @@
         <div class="row">
 
             <sider-bar [url]="URLz.GET_DEMOGRAPHIC_SIDE_BAR" sideBarName="Levels" (filterList)='filteredRecords($event)' ></sider-bar>
-
-            <div class="col-lg-10 col-md-10 col-12 ml-auto p-0 list__view__col">
+            <div class="col-lg-10 col-md-10 col-12 ml-auto grid__view__col">
+              <div class="grid__view__div">
+                  <div class="row">
+                      <div *ngFor="let item of this._tbls[URLz.GET_ALL_PMDEMOGRAPHIC_LIST].gridViewResult" class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12  mb-3 px-2 gri_list_dBoxes hrmanager">
+                          <a href="javascript:void(0);" (click)="_switch(item.id)">
+                              <div class="card_style">
+                                  <!-- <div class="col-4 px-0">
+                                      <img src="../../../../assets/images/user/user1.jpg" class="img-fluid">
+                                  </div> -->
+                                  <div class="col-7">
+                                      <div class="card_text_contant">
+                                          <p class="m-0">{{item?.demographicLevelTitle}}</p>
+                                          <p class="m-0">{{item?.demographicPrefix}}</p>
+                                          <p class="m-0">{{item?.parentName}}</p>
+                                          <p class="m-0">{{item?.title}}</p>
+                                      </div>
+                                  </div>
+                                  <div class="col-1 px-0">
+                                      <div class="card_status_time">
+                                          <span>
+                                              <i class="fa fa-circle-o"></i>
+                                          </span>
+                                          <span>
+                                              <i class="fa fa-clock-o"></i>
+                                          </span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-lg-10 col-md-10 col-12 ml-auto p-0 list__view__col d-none">
               <div class="list__view__div table-responsive">
                 <div class="mat_table">
                   <table
@@ -280,8 +312,10 @@
                     <tr mat-row *matRowDef="let row; columns: this._tbls[URLz.GET_ALL_PMDEMOGRAPHIC_LIST].columns;" (click)="_switch(row.id)"></tr>
                   </table>
                 </div>
-                <di-paginator [tbl]="_tbls[URLz.GET_ALL_PMDEMOGRAPHIC_LIST]" (paginateEvent)="_refresh(URLz.GET_ALL_PMDEMOGRAPHIC_LIST)"></di-paginator>
               </div>
+            </div>
+            <div class="col-lg-10 col-md-10 col-12 ml-auto">
+              <di-paginator [tbl]="_tbls[URLz.GET_ALL_PMDEMOGRAPHIC_LIST]" (paginateEvent)="_refresh(URLz.GET_ALL_PMDEMOGRAPHIC_LIST)"></di-paginator>
             </div>
         </div>
     </div>

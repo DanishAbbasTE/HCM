@@ -8,12 +8,12 @@
       </p>
       <div class="side_bar_tab_here">
           <div *ngFor="let data of SideBarData">
-              <a href="javascript:void(0);" class="sideTabs showOnliAmin" (click)="getFilteredRecords(data.levelId)">
+              <a href="javascript:void(0);" class="sideTabs showOnliAmin" (click)="getFilteredRecords(data.id)">
                   <span>
-                      {{data.demographicTitle}}
+                      {{data.title}}
                   </span>
                   <span>
-                    {{data.pmDemoGraphicCount}}
+                    {{data.count}}
                   </span>
               </a>
           </div>

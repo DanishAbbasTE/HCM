@@ -28,6 +28,7 @@ export abstract class BaseListClass extends BaseForm implements OnDestroy{
     this._tbls[tableName] = {
       query: {},
       dataSource: new MatTableDataSource(<any>[]),
+      gridViewResult : [],
       search: {}, // not in use old
       length: 0,
       index: 0,
@@ -87,6 +88,7 @@ export abstract class BaseListClass extends BaseForm implements OnDestroy{
     this._http
     .getListing(param).subscribe((res) => {
       this._tbls[tableName].dataSource.data = res?.data?.data;
+      this._tbls[tableName].gridViewResult = res?.data?.data;
       this._tbls[tableName].length = res?.data?.recordsTotal;
     });
   }
