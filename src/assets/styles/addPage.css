@@ -22,6 +22,11 @@
     color: #575757;
     /* transition: 0.3s; */
 }
+.addAreaSection .add_contant_div input[disabled],
+.addAreaSection .add_contant_div select[disabled]{
+    background: transparent !important;
+    border-bottom: 1px solid transparent !important;
+}
 .addAreaSection .add_contant_div input:hover,
 .addAreaSection .add_contant_div select:hover{
     border-bottom: 2px solid var(--other-and-btn-colors);

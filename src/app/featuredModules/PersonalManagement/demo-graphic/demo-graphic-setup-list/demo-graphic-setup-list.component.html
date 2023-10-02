@@ -166,12 +166,12 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-6 on__desk__px_1">
                                   <div class="list__type__btns">
                                     <!-- use active class for show active -->
-                                     <a href="javascript:void(0);" class="g_l_Active " (click)="custom.gridActive()">
+                                     <a href="javascript:void(0);" class="g_l_Active " (click)="custom.gridActive()" data-toggle="tooltip" title="Kanban">
                                         <span>
                                         <i class="fa fa-th-large"></i>
                                         </span>
                                      </a>
-                                     <a href="javascript:void(0);" class="g_l_Active" (click)="custom.listActive()">
+                                     <a href="javascript:void(0);" class="g_l_Active" (click)="custom.listActive()" data-toggle="tooltip" title="List">
                                         <span>
                                         <i class="fa fa-bars"></i>
                                         </span>
@@ -199,7 +199,7 @@
     <div class="col-12">
         <div class="row">
 
-            <sider-bar [url]="URLz.GET_DEMOGRAPHIC_SIDE_BAR" sideBarName="Levels" (filterList)='filteredRecords($event)' ></sider-bar>
+            <sider-bar class="col-lg-2 col-md-2 col-12 side_bar_component" [url]="URLz.GET_DEMOGRAPHIC_SIDE_BAR" sideBarName="Levels" (filterList)='filteredRecords($event)' ></sider-bar>
             <div class="col-lg-10 col-md-10 col-12 ml-auto grid__view__col">
               <div class="grid__view__div">
                   <div class="row">

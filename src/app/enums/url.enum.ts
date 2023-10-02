@@ -35,7 +35,7 @@ export enum URLz {
   // ================== GET ONE ======================== //
 
   GE_DEMO_GRAPHIC_BY_ID = "Demographic/GetPMDemographicById",
-
+  GE_GENDER_BY_ID = "Gender/GetGenderById",
   // ================== GET ONE ======================== //
 
   // ================== GET SIDE BAR =================== //

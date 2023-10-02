@@ -163,5 +163,7 @@ animation: showSlow 0.5s ease forwards;
   background: var(--nav1-main-menu-text-color3);
   padding: 10px 60px;
 }
-
+.dropdown-item.head_item{
+  
+}
 /* NAV CSS */

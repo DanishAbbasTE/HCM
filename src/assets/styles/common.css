@@ -6,8 +6,12 @@ a{
   color: inherit;
   text-decoration: none !important;
 }
+html{
+  height: 100%;
+}
 body{
    background: #f6f7fa !important;
+   height: 100%;
 }
 .fa, .far, .fas{
   font-family: "Font Awesome 5 Free" !important;
@@ -250,4 +254,42 @@ table.mat-table .fa-edit{
   cursor: pointer;
   display: block;
   text-align: center;
+}
+
+/* css for nav  */
+
+.navbar_1 .brop_ul{
+  border-radius: 0px;
+  border: 0px solid transparent;
+  box-shadow: 0px 0px 10px -6px black;
+}
+
+.navbar_1 .dropdown-item.head_item{
+  font-weight: 800;
+  padding: 4px 10px;
+}
+
+
+/* css for pagination */
+
+.mat-paginator-outer-container{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0px 4px 10px #000000a8;
+}
+.mat-paginator-outer-container .mat-paginator-container{
+  justify-content: center;
+}
+
+.mat-paginator-range-actions button{
+  background: #e7e9ed;
+    border-radius: 0px !important;
+    margin: 0px 1px;
+}
+
+.mat-paginator-range-actions button {
+  border-radius: 5px 0px 0px 5px;
 }

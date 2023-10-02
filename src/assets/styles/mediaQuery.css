@@ -14,6 +14,9 @@
 }
 
 @media(max-width: 767px){
+    .grid_list_area_sideBar_area .side_bar_component{
+        border-right: 0px solid transparent;
+    }
     .search_filter_add_area .new__add__btn__div a{
         margin-left: auto;
     }

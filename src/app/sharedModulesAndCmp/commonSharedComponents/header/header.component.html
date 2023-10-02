@@ -57,11 +57,76 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Configuration
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <!-- <li><a class="dropdown-item" href="#">Action</a></li>
-                 <li><a class="dropdown-item" href="#">Another action</a></li> -->
-                <li class="dropdown-submenu">
-                  <a class="dropdown-item dropdown-toggle" href="#">Bank</a>
+              <ul class="dropdown-menu brop_ul" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item head_item" href="javascript:void(0);">Bank</a>
+                </li>
+                <li>
+                  <a class="dropdown-item " [routerLink]="'/Personal_Management/banks/bank_add'">Bank</a>
+                </li>
+                <li>
+                  <a class="dropdown-item head_item" href="javascript:void(0);">Demographic</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [routerLink]="'/Personal_Management/demographic/demo_graphic_list'">
+                    Demographic Setup
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [routerLink]="'/Personal_Management/demographic/org_list'">
+                    Organization
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item head_item" href="javascript:void(0);">Employee</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/designation_list'">
+                    Designation
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/employee_category_list'">
+                    Employee Category
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/gender_list'">
+                    Gender
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/marital_satus_list'">
+                    Marital Satus
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/policy_defined_list'">
+                    Policy Defined
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/religion_list'">
+                    Religion
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/weekly_off_list'">
+                    Weekly off
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/gazetted_holidays'">
+                    Gazetted Holidays
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/qualification_level_list'">
+                    Qualification Level
+                  </a>
+                </li>
+                <!-- <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="javascript:void(0);">Bank</a>
                   <ul class="dropdown-menu">
                     <li>
                       <a class="dropdown-item" [routerLink]="'/Personal_Management/banks/bank_add'">
@@ -69,9 +134,9 @@
                       </a>
                     </li>
                   </ul>
-                </li>
-                <li class="dropdown-submenu">
-                  <a class="dropdown-item dropdown-toggle" href="#">Demographic</a>
+                </li> -->
+                <!-- <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="javascript:void(0);">Demographic</a>
                   <ul class="dropdown-menu">
                     <li>
                       <a class="dropdown-item" [routerLink]="'/Personal_Management/demographic/demo_graphic_list'">
@@ -84,9 +149,9 @@
                       </a>
                     </li>
                   </ul>
-                </li>
-                <li class="dropdown-submenu">
-                  <a class="dropdown-item dropdown-toggle" href="#">Employee</a>
+                </li> -->
+                <!-- <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="javascript:void(0);">Employee</a>
                   <ul class="dropdown-menu">
                     <li>
                       <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/designation_list'">
@@ -134,7 +199,7 @@
                       </a>
                     </li>
                   </ul>
-                </li>
+                </li> -->
               </ul>
             </li>
           </ul>
