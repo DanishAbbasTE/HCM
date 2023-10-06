@@ -29,6 +29,8 @@ import { GazettedHolidaysComponent } from './gazetted-holidays/gazetted-holidays
 
 import { QualificationLevelComponent } from './QualificationLevels/qualification-level-add/qualification-level.component';
 import { QualificationLevelListComponent } from './QualificationLevels/qualification-level-list/qualification-level-list.component';
+import { CreateEmployeeAddComponent } from './create-employee/create-employee-add/create-employee-add.component';
+import { CreateEmployeeListComponent } from './create-employee/create-employee-list/create-employee-list.component';
 
 
 
@@ -39,6 +41,14 @@ const routes: Routes = [
       {
         path: "employee_list",
         component: EmployeeListComponent,
+      },
+      {
+        path: "create_employee_add",
+        component: CreateEmployeeAddComponent,
+      },
+      {
+        path: "create_employee_list",
+        component: CreateEmployeeListComponent,
       },
       {
         path: "designation_add",
@@ -65,11 +75,11 @@ const routes: Routes = [
         component: GenderListComponent,
       },
       {
-        path: "marital_satus_add",
+        path: "marital_status_add",
         component: MaritalStatusComponent,
       },
       {
-        path: "marital_satus_list",
+        path: "marital_status_list",
         component: MaritalStatusListComponent,
       },
       {

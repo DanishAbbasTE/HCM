@@ -38,18 +38,18 @@ export class GenderAddComponent extends BaseForm implements OnInit {
   }
 
   submit(){
-      console.log(this._fs._form.value);
       this._fs._form.markAllAsTouched();
       this._vs._submitted = true;
       this._vs.logForm();
+      if (!this._activeId) {
+        this._fs._form.removeControl('IsActive')
+      }
       if(this._fs._form.valid){
-
         // add-shahwaiz
         if(this._activeId){
           this._fs._form.addControl('id', new FormControl(this._activeId));
         }
 // add-shahwaiz
-
         this._http.create({
           url: environment.API_URL,
           endpoint: URLz.SAVE_GENDER,

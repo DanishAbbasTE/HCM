@@ -26,4 +26,21 @@ export class StateService {
   // public checkPermission(action: ACTION) {
   //   return this.permission?.find((a) => a.name == action);
   // }
+
+  public MARITAL_STATUS = [
+    {id: 'single', title: 'Single'},
+    {id: 'married', title: 'Married'},
+  ]
+
+  public BLOOD_GROUP = [
+    {id: 1, title: 'AB+'},
+    {id: 1, title: 'AB-'},
+    {id: 1, title: 'A+'},
+    {id: 1, title: 'A-'},
+    {id: 1, title: 'B+'},
+    {id: 1, title: 'B-'},
+    {id: 1, title: 'O+'},
+    {id: 1, title: 'O-'}
+  ]
+
 }

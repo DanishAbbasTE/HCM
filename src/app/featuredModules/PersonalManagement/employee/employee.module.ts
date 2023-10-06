@@ -21,6 +21,8 @@ import { PoliciyDefinedListComponent } from './policiesDefined/policiy-defined-l
 import { ReligionListComponent } from './religions/religion-list/religion-list.component';
 import { WeeklyOffListComponent } from './weeklyOffs/weekly-off-list/weekly-off-list.component';
 import { QualificationLevelListComponent } from './QualificationLevels/qualification-level-list/qualification-level-list.component';
+import { CreateEmployeeAddComponent } from './create-employee/create-employee-add/create-employee-add.component';
+import { CreateEmployeeListComponent } from './create-employee/create-employee-list/create-employee-list.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { QualificationLevelListComponent } from './QualificationLevels/qualifica
     PoliciyDefinedListComponent,
     ReligionListComponent,
     WeeklyOffListComponent,
-    QualificationLevelListComponent
+    QualificationLevelListComponent,
+    CreateEmployeeAddComponent,
+    CreateEmployeeListComponent
   ],
   imports: [
     CommonModule,

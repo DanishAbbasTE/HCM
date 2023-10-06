@@ -16,7 +16,7 @@ export class MaritalStatusListComponent extends BaseListClass implements OnInit 
   }
 
   ngOnInit() {
-    this._pathLocation = '/Personal_Management/employee/marital_satus_add';
+    this._pathLocation = '/Personal_Management/employee/marital_status_add';
     this.initTables();
   }
 

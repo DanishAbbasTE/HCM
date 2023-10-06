@@ -1,0 +1,30 @@
+import { Component, ElementRef, Injector, Input, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { BaseForm } from 'src/app/sharedClasses/base-from';
+
+@Component({
+  selector: 'di-text',
+  templateUrl: './text.component.html',
+  styleUrls: ['./text.component.css']
+})
+export class TextComponent extends BaseForm implements OnInit {
+  @Input() label: string = '';
+  @Input() control: FormControl | any;
+  @Input() req: boolean = false;
+  @Input() group: FormGroup | any;
+  @Input() inpClass: string = 'form-control';
+  errorMsg: string = '';
+
+  constructor(injector: Injector) {
+    super(injector);
+  }
+
+  ngOnInit(): void {
+
+  }
+
+  manageValidation() {
+    this.errorMsg = this._vs.errMsg(this.control)
+  }
+  
+}

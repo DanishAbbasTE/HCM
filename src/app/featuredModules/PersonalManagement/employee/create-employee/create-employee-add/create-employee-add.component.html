@@ -1,0 +1,509 @@
+<form autocomplete="off" [formGroup]="_fs._form" (ngSubmit)="onSubmit()">
+   <!----------------- filters area ----------------->
+   <section class="search_filter_add_area">
+      <div class="col-12">
+         <div class="row">
+            <div class="col-lg-6 col-md-6 col-12">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="Page__heading mb-0">
+                        <p>
+                           Create Employee <span class="span__slesh">/</span> <span class="span__new">New</span>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <div class="save__discard__div">
+                        <button type="submit " *ngIf="_showSave" class="third_bar_save save_btn">
+                           Save
+                        </button>
+                        <button type="button" *ngIf="_showEdit" class="third_bar_save save_btn">
+                           Edit
+                        </button>
+                        <button class="third_bar_discard save_btn">
+                           Discard
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!----------------- filters area ----------------->
+   <!----------------- add area----------------->
+
+   <section class="addAreaSection">
+      <div class="col-xl-12">
+         <div class="add_box_card">
+            <h1>
+               Create Employee
+            </h1>
+            <div class="add_contant_div">
+               <div class="col-12">
+                  <div class="row m-0">
+                     <div class="col-lg-10 col-md-10 col-sm-8 col-8 my-2 p-0">
+                        <div class="col-lg-12">
+                           <div class="form-group row mb-0">
+                              <!-- <label class="col-sm-2 col-form-label">Holiday Description</label> -->
+                              <div class="col-sm-12">
+                                 <input class="form-control big_input_class" placeholder="Employee's Name">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-12">
+                           <div class="form-group row mb-0">
+                              <div class="col-sm-12">
+                                 <!-- <input class="form-control second_big_input_class" placeholder="Job Position"> -->
+                                 <select class="form-control second_big_input_class" id="levelTwo">
+                                    <option selected>Designation</option>
+                                    <option>
+                                       System
+                                    </option>
+                                    <option>
+                                       Active Directory
+                                    </option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4">
+                           <div class="form-group row mb-0">
+                              <div class="col-sm-12">
+                                 <input class="form-control third_select_class" placeholder="Employee Ref No">
+                                 <!-- <select class="form-control third_select_class" id="levelTwo">
+                                                <option selected>Tag</option>
+                                                <option>
+                                                   System
+                                                </option>
+                                                <option>
+                                                   Active Directory
+                                                </option>
+                                             </select> -->
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-2 col-md-2 col-sm-4 col-4 my-2 p-0">
+                        <div>
+                           <label class="filelabel">
+                              <!-- <i class="fa fa-paperclip">
+                                          </i>
+                                          <span class="title">
+                                              Add File
+                                          </span> -->
+                              <img src="../../../../../../assets/images/odo/8.png" class="img-fluid">
+                              <input class="FileUpload1" id="FileInput" name="booking_attachment" type="file" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-dd label="Gender" [group]="_fs._form" [req]="false" [url]="URLz.USER_GENDER" control="gender"></di-dd>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-dd label="Marital Status" [group]="_fs._form" [req]="false" [render]="_ss.MARITAL_STATUS" control="maritalStatus"></di-dd>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Father/Husband Name" control="f_h_name" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <div class="form-group row my-0">
+                           <label class="col-sm-2 col-form-label">NIC Number</label>
+                           <div class="col-sm-10">
+                              <input class="form-control">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <div class="form-group row my-0">
+                           <label class="col-sm-2 col-form-label">CNIC Expiry</label>
+                           <div class="col-sm-10">
+                              <input class="form-control">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-dd label="Select Religion" [group]="_fs._form" [req]="false" [url]="URLz.RELIGION" control="religion"></di-dd>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <div class="form-group row my-0">
+                           <label class="col-sm-2 col-form-label">Birth of Date</label>
+                           <div class="col-sm-10">
+                              <input class="form-control" type="date">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <div class="form-group row my-0">
+                           <label class="col-sm-2 col-form-label">Mobile Number</label>
+                           <div class="col-sm-10">
+                              <input class="form-control">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <div class="form-group row my-0">
+                           <label class="col-sm-2 col-form-label">Emai</label>
+                           <div class="col-sm-10">
+                              <input class="form-control">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-dd label="Blood Group" [group]="_fs._form" control="bloodGroup" [render]="_ss.BLOOD_GROUP"></di-dd>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <div class="form-group row my-0">
+                           <label class="col-sm-2 col-form-label">Telephone</label>
+                           <div class="col-sm-10">
+                              <input class="form-control">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <div class="form-group row my-0">
+                           <label class="col-sm-2 col-form-label">Place Of Birth</label>
+                           <div class="col-sm-10">
+                              <input class="form-control">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <div class="form-group row my-0">
+                           <label class="col-sm-2 col-form-label">Address</label>
+                           <div class="col-sm-10">
+                              <input class="form-control">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <div class="form-group row my-0">
+                           <label class="col-sm-2 col-form-label">Permanent Address</label>
+                           <div class="col-sm-10">
+                              <input class="form-control">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <ul class="nav nav-tabs nav-tabs-my" id="myTab" role="tablist">
+                  <li class="nav-item">
+                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                        aria-controls="home" aria-selected="true">Work Information</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link " id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                        aria-controls="profile" aria-selected="false">Company Setting</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link " id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                        aria-controls="contact" aria-selected="false">HR Settings</a>
+                  </li>
+               </ul>
+               <div class="col-12">
+                  <div class="tab-content" id="myTabContent">
+                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="col-12">
+                           <div class="row">
+                              <div class="col-lg-12">
+                                 <div class="row">
+                                    <div class="col-lg-6">
+                                       <h3 class="tabs__mini_heading">
+                                          Demographic
+                                       </h3>
+                                       <div class="col-lg-12 my-2">
+                                          <di-dd label="Demographic Level" [group]="_fs._form" control="demographicLevel" [url]="URLz.CONFIG_DEMO_GRAPHIC" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                       </div>
+                                       <div class="col-lg-12 my-2">
+                                          <div class="form-group row my-0">
+                                             <label class="col-sm-3 col-form-label">Demographic Value</label>
+                                             <div class="col-sm-9">
+                                                <select class="form-control" id="levelTwo">
+                                                   <option selected="">Multi Select</option>
+                                                   <option>
+                                                      System
+                                                   </option>
+                                                   <option>
+                                                      Active Directory
+                                                   </option>
+                                                </select>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                       <h3 class="tabs__mini_heading">
+                                          Organizational
+                                       </h3>
+                                       <div class="col-lg-12 my-2">
+                                          <di-dd label="Organizational Level" [group]="_fs._form" control="organizationLevel" [url]="URLz.COFIG_ORGANIZATION_DEMO_GRAPHIC" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                       </div>
+                                       <div class="col-lg-12 my-2">
+                                          <div class="form-group row my-0">
+                                             <label class="col-sm-3 col-form-label">Organizational Value</label>
+                                             <div class="col-sm-9">
+                                                <select class="form-control" id="levelTwo">
+                                                   <option selected="">Multi Select</option>
+                                                   <option>
+                                                      System
+                                                   </option>
+                                                   <option>
+                                                      Active Directory
+                                                   </option>
+                                                </select>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-12">
+                                       <div class="row m-0">
+                                          <h3 class="tabs__mini_heading w-100">
+                                             Employee STATUS
+                                          </h3>
+                                          <div class="col-lg-6 my-2">
+                                             <div class="form-group row my-0">
+                                                <label class="col-sm-3 col-form-label">Office Email</label>
+                                                <div class="col-sm-9">
+                                                   <input class="form-control">
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-6 my-2">
+                                             <div class="form-group row my-0">
+                                                <label class="col-sm-3 col-form-label">Joining Date</label>
+                                                <div class="col-sm-9">
+                                                   <input class="form-control" type="date">
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-6 my-2">
+                                             <di-dd label="Policy Defined Name" [group]="_fs._form" control="poliDefName" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                          </div>
+                                          <div class="col-lg-6 my-2">
+                                             <di-dd label="Employee Category" [group]="_fs._form" control="employeeCategory" [url]="URLz.EMPLOYEE_CATEGORY" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                          </div>
+                                          <div class="col-lg-6 my-2">
+                                             <div class="form-group row my-0">
+                                                <label class="col-sm-3 col-form-label">FTE Count</label>
+                                                <div class="col-sm-9">
+                                                   <input class="form-control">
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-lg-6 my-2">
+                                             <di-dd label="Employee Type" control="employeeType" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane fade " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="col-12">
+                           <div class="row m-0">
+                              <h3 class="tabs__mini_heading w-100">
+                                 company Setting
+                              </h3>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Cost Center</label>
+                                    <div class="col-sm-9">
+                                       <select class="form-control" id="levelTwo">
+                                          <option selected="">Select</option>
+                                          <option>
+                                             System
+                                          </option>
+                                          <option>
+                                             Active Directory
+                                          </option>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Employee Bank</label>
+                                    <div class="col-sm-9">
+                                       <select class="form-control" id="levelTwo">
+                                          <option selected="">Select</option>
+                                          <option>
+                                             System
+                                          </option>
+                                          <option>
+                                             Active Directory
+                                          </option>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Account Number</label>
+                                    <div class="col-sm-9">
+                                       <input class="form-control">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Company Bank</label>
+                                    <div class="col-sm-9">
+                                       <select class="form-control" id="levelTwo">
+                                          <option selected="">Select</option>
+                                          <option>
+                                             System
+                                          </option>
+                                          <option>
+                                             Active Directory
+                                          </option>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Currency</label>
+                                    <div class="col-sm-9">
+                                       <select class="form-control" id="levelTwo">
+                                          <option selected="">Select</option>
+                                          <option>
+                                             System
+                                          </option>
+                                          <option>
+                                             Active Directory
+                                          </option>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="col-12">
+                           <div class="row m-0">
+                              <h3 class="tabs__mini_heading w-100">
+                                 HR Setting
+                              </h3>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Gratuity Start Date</label>
+                                    <div class="col-sm-9">
+                                       <input class="form-control" type="date">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Resign Date</label>
+                                    <div class="col-sm-9">
+                                       <input class="form-control" type="date">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Retirement Date</label>
+                                    <div class="col-sm-9">
+                                       <input class="form-control" type="date">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Leaving Reason</label>
+                                    <div class="col-sm-9">
+                                       <select class="form-control" id="levelTwo">
+                                          <option selected="">Select</option>
+                                          <option>
+                                             System
+                                          </option>
+                                          <option>
+                                             Active Directory
+                                          </option>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Approver</label>
+                                    <div class="col-sm-9">
+                                       <select class="form-control" id="levelTwo">
+                                          <option selected="">Select</option>
+                                          <option>
+                                             System
+                                          </option>
+                                          <option>
+                                             Active Directory
+                                          </option>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Confirmation Date</label>
+                                    <div class="col-sm-9">
+                                       <input class="form-control" type="date">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Leaving Date</label>
+                                    <div class="col-sm-9">
+                                       <input class="form-control" type="date">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Seniority Date</label>
+                                    <div class="col-sm-9">
+                                       <input class="form-control" type="date">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">User Group</label>
+                                    <div class="col-sm-9">
+                                       <select class="form-control" id="levelTwo">
+                                          <option selected="">Multi Select</option>
+                                          <option>
+                                             System
+                                          </option>
+                                          <option>
+                                             Active Directory
+                                          </option>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">Has Leaved</label>
+                                    <div class="col-sm-9">
+                                       <div class="check__radio__div">
+                                          <input class="form-check-input" type="checkbox" id="gridCheck">
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!----------------- add area----------------->
+</form>

@@ -29,6 +29,7 @@ export enum URLz {
   GET_ALL_LEAVING_REASON = "LeavingReason/GetAllLeavingReasonByPagination",
   GET_ALL_GAZETTED_HOLIDAYS = "GazettedHoliday/GetAllGazettedHolidayByPagination",
   GET_ALL_COST_CENTER = "CostCenter/GetAllCostCenterByPagination",
+  GET_ALL_EMPLOYEE = "Employee/LoadAllEmployee",
 
 
 
@@ -36,6 +37,7 @@ export enum URLz {
 
   GE_DEMO_GRAPHIC_BY_ID = "Demographic/GetPMDemographicById",
   GE_GENDER_BY_ID = "Gender/GetGenderById",
+  GET_MARTIAL_STATUS_BY_ID = 'MartialStatus/GetMartialStatusById',
   // ================== GET ONE ======================== //
 
   // ================== GET SIDE BAR =================== //
@@ -61,5 +63,21 @@ export enum URLz {
   SAVE_RELIGION = "Religion/SaveReligion",
   SAVE_WEEKLY_OFFS = "WeeklyOff/SaveWeeklyOff",
   SAVE_GAZETTED_HOLIDAY="GazettedHoliday/SaveGazettedHoliday",
-  SAVE_QUALIFICATION_LEVEL ="QulificationLevel/SaveQualificationLevel"
+  SAVE_QUALIFICATION_LEVEL ="QulificationLevel/SaveQualificationLevel",
+
+  // =================== FOR DROPDOWNS ===================== //
+
+  RELIGION = "Religion/LoadAllReligionData",
+  MARITAL_STATUS = "MartialStatus/LoadAllMartialStatusData", //result conflict
+  USER_GENDER = "Gender/LoadAllGenderData",
+  DESIGNATION = "Designation/LoadAllDesignationData",
+  USER_GROUP = "User/GetAllUserGroups",
+  EMPLOYEE_CATEGORY = "Employee/LoadAllEmployeeCategoryData",
+  COST_CENTER = "Costcenter/GetAllCostCenter",
+  BANK_COMPANY = "Banks/LoadAllBankDatacompany",
+  ALL_CURRENCY = "Currency/GetAllCurrency",
+  EMPLOYEE_TYPE = "Employee/GetAllEmployeeTypes", //result conflict
+  LEAVING_REASON = "LeavingReason/LoadAllLeavingReasonData",
+  QUALIFICATION_LEVEL = "QulificationLevel/LoadAllQualificationLevelData",
+  QUALIFICATION = "Qualification/LoadAllQualificationData"
 }

@@ -12,6 +12,8 @@ import { NgxModulesModule } from './thirdPartyModules/ngx-modules/ngx-modules.mo
 import { NgMaterialzModule } from './thirdPartyModules/ng-materialz/ng-materialz.module';
 import { DiPaginatorComponent } from './commonSharedComponents/di-paginator/di-paginator.component';
 import {LoaderComponent} from './commonSharedComponents/loader/loader.component';
+import { DiDdComponent } from './commonSharedComponents/controls/di-dd/di-dd.component';
+import { TextComponent } from './commonSharedComponents/controls/text/text.component';
 
 const commonModules = [
   FormsModule,
@@ -27,12 +29,14 @@ const exportedComponents = [
   HeaderComponent,
   SiderBarComponent,
   DiPaginatorComponent,
-  LoaderComponent
+  LoaderComponent,
+  DiDdComponent,
+  TextComponent,
 ]
 
 @NgModule({
   declarations: [
-    exportedComponents
+    exportedComponents,
   ],
   imports: [
     CommonModule,
@@ -40,7 +44,7 @@ const exportedComponents = [
   ],
   exports:[
     commonModules,
-    exportedComponents
+    exportedComponents,
   ]
 })
 export class SharedModule { }
