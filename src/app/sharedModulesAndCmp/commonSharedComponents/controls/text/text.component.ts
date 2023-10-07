@@ -1,4 +1,4 @@
-import { Component, ElementRef, Injector, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Injector, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { BaseForm } from 'src/app/sharedClasses/base-from';
 
@@ -12,7 +12,11 @@ export class TextComponent extends BaseForm implements OnInit {
   @Input() control: FormControl | any;
   @Input() req: boolean = false;
   @Input() group: FormGroup | any;
+  @Input() type: string = 'text';
+  @Input() placeholder: string = '';
   @Input() inpClass: string = 'form-control';
+  @Input() labelClass: string = 'col-sm-2 col-form-label';
+  @Input() divClass: string = 'col-sm-10'; 
   errorMsg: string = '';
 
   constructor(injector: Injector) {

@@ -74,8 +74,8 @@ export enum URLz {
   USER_GROUP = "User/GetAllUserGroups",
   EMPLOYEE_CATEGORY = "Employee/LoadAllEmployeeCategoryData",
   COST_CENTER = "Costcenter/GetAllCostCenter",
-  BANK_COMPANY = "Banks/LoadAllBankDatacompany",
-  ALL_CURRENCY = "Currency/GetAllCurrency",
+  COMPANY_BANK = "Banks/LoadAllBankData",
+  CURRENCY = "Currency/GetAllCurrency",
   EMPLOYEE_TYPE = "Employee/GetAllEmployeeTypes", //result conflict
   LEAVING_REASON = "LeavingReason/LoadAllLeavingReasonData",
   QUALIFICATION_LEVEL = "QulificationLevel/LoadAllQualificationLevelData",

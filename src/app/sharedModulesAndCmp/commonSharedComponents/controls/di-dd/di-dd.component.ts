@@ -18,6 +18,7 @@ export class DiDdComponent extends BaseForm implements OnInit {
   @Input() params: any = {};
   @Input() title: any;
   @Input() render: any;
+  @Input() default: string = 'Select';
   @Input() group: FormGroup | any;
   @Input() selectClass: string = 'form-control';
   @Input() labelClass: string = 'col-sm-2 col-form-label';
@@ -40,7 +41,7 @@ export class DiDdComponent extends BaseForm implements OnInit {
     this._http.get({
       url: environment.API_URL,
       endpoint: this.url,
-      query: this.params
+      ...this.params
     }).subscribe({
       next: ((res: any) => {
         let data = res?.data;

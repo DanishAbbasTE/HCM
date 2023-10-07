@@ -2,7 +2,7 @@
    <label [class]="labelClass">{{label}}</label>
    <div [class]="divClass">
       <select [class]="selectClass" id="levelTwo" [required]="req" [formControlName]="control">
-         <option selected="Select" disabled>Select</option>
+         <option selected="Select">{{default}}</option>
          <option *ngFor="let data of renderDropDown">
             {{ renderDropData(data) }}
          </option>

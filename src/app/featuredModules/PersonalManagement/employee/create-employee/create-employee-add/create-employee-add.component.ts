@@ -32,7 +32,7 @@ export class CreateEmployeeAddComponent extends BaseForm implements OnInit {
             gender: [''],
             f_h_name: [''],
             cnicExpiry: [''],
-            birthOfDate: [''],
+            dateOfBirth: [''],
             email: [''],
             telephone: [''],
             address: [''],
@@ -50,7 +50,7 @@ export class CreateEmployeeAddComponent extends BaseForm implements OnInit {
     }
     
     workInformationForm (){
-        return this.work_information = this._fb.group({
+        return this.work_information = {
             demographicLevel: [''],
             demographicValue: [''],
             organizationLevel: [''],
@@ -61,22 +61,23 @@ export class CreateEmployeeAddComponent extends BaseForm implements OnInit {
             employeeCategory: [''],
             fteCount: [''],
             employeeType: ['']
-        })
+        }
     }
 
     companySettingForm (){
-        return this.company_setting = this._fb.group({
+        return this.company_setting = {
             costCenter: [''],
             employeeBank: [''],
             accountNumber: [''],
             companyBank: [''],
             currency: ['']
-        })
+        }
     }
 
     hrSettingForm(){
-        return this.hr_setting = this._fb.group({
+        return this.hr_setting = {
             gratuityStartDate: [''],
+            resignDate: [''],
             retirementDate: [''],
             approver: [''],
             leavingDate: [''],
@@ -86,11 +87,11 @@ export class CreateEmployeeAddComponent extends BaseForm implements OnInit {
             confirmationDate: [''],
             seniorityDate: [''],
             hasLeaved: ['']
-        })
+        }
     }
 
     onSubmit(){
-        console.log('hello');
+        console.log(this._fs._form.value);
     }
 
     feature() {
