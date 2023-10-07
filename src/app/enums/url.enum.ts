@@ -35,6 +35,9 @@ export enum URLz {
   // ================== GET ONE ======================== //
 
   GE_DEMO_GRAPHIC_BY_ID = "Demographic/GetPMDemographicById",
+  GE_DESIGNATION_BY_ID = "Designation/GetDesignationById",
+  GE_RELIGION_BY_ID = "Religion/GetReligionById",
+  GE_WEEKLYOFF_BY_ID = "WeeklyOff/GetWeeklyOffById",
 
   // ================== GET ONE ======================== //
 

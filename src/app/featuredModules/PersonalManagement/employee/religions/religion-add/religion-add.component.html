@@ -16,12 +16,15 @@
               <div class="row">
                   <div class="col-12">
                     <div class="save__discard__div">
-                      <button type="submit " class="third_bar_save save_btn">
+                      <button type="submit " *ngIf="_showSave" class="third_bar_save save_btn">
                         Save
                       </button>
-                        <a href="javascript:void(0);" class="third_bar_discard">
-                          Discard
-                        </a>
+                      <button type="button" *ngIf="_showEdit" class="third_bar_save save_btn" (click)="enableForm()">
+                        Edit
+                      </button>
+                      <button  class="third_bar_discard save_btn">
+                        Discard
+                      </button>   
                     </div>
                   </div>
               </div>
@@ -63,8 +66,8 @@
                                     <label class="col-sm-4 col-form-label">Is Active</label>
                                     <div class="col-sm-8">
                                       <div class="check_radio_div">
-                                         <input class="form-check-input" type="checkbox" id="gridCheck">
-                                         <mat-error *ngIf="_fs._form.get('IsActive')?.touched" > {{  _vs.errMsg('IsActive')}}</mat-error>
+                                        <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="IsActive">
+                                        <mat-error *ngIf="_fs._form.get('IsActive')?.touched" > {{  _vs.errMsg('IsActive')}}</mat-error>
                                       </div>
                                     </div>
                                 </div>

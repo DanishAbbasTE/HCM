@@ -16,12 +16,15 @@
                       <div class="row">
                         <div class="col-12">
                             <div class="save__discard__div">
-                              <button type="submit " class="third_bar_save save_btn">
+                              <button type="submit " *ngIf="_showSave" class="third_bar_save save_btn">
                                 Save
                               </button>
-                              <a href="javascript:void(0);" class="third_bar_discard">
-                                  Discard
-                              </a>
+                              <button type="button" *ngIf="_showEdit" class="third_bar_save save_btn" (click)="enableForm()">
+                                Edit
+                              </button>
+                              <button  class="third_bar_discard save_btn">
+                                Discard
+                              </button>   
                             </div>
                         </div>
                       </div>
