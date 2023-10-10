@@ -14,6 +14,7 @@ import { DiPaginatorComponent } from './commonSharedComponents/di-paginator/di-p
 import {LoaderComponent} from './commonSharedComponents/loader/loader.component';
 import { DiDdComponent } from './commonSharedComponents/controls/di-dd/di-dd.component';
 import { TextComponent } from './commonSharedComponents/controls/text/text.component';
+import { MultiDdComponent } from './commonSharedComponents/controls/multi-dd/multi-dd.component';
 
 const commonModules = [
   FormsModule,
@@ -32,6 +33,7 @@ const exportedComponents = [
   LoaderComponent,
   DiDdComponent,
   TextComponent,
+  MultiDdComponent,
 ]
 
 @NgModule({
