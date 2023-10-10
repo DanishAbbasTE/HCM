@@ -1,7 +1,7 @@
 <div class="form-group row my-0" [formGroup]="group">
    <label [class]="labelClass">{{label}}</label>
    <div [class]="divClass">
-      <input [class]="inpClass" [type]="type" [formControlName]="control" [required]="req" (input)="manageValidation()"
+      <input [class]="inpClass" [type]="type" [formControlName]="control" [required]="req" [value]="value" (input)="manageValidation()"
          [placeholder]="placeholder">
       <div style="position: relative;">
          <mat-error *ngIf="control?.touched" class="error">{{ errorMsg }}</mat-error>

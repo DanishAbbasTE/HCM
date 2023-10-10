@@ -1,5 +1,5 @@
-import { Component, Injector, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, ElementRef, Injector, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { StateService } from 'src/app/services/state.service';
 import { BaseForm } from 'src/app/sharedClasses/base-from';
 
@@ -9,28 +9,33 @@ import { BaseForm } from 'src/app/sharedClasses/base-from';
     styleUrls: ['./create-employee-add.component.css']
 })
 export class CreateEmployeeAddComponent extends BaseForm implements OnInit {
-    _ss: StateService
-    work_information: FormGroup | any
-    company_setting: FormGroup | any
-    hr_setting: FormGroup | any
+    @ViewChild('is_leave') isLeave?: ElementRef<any>;
+    _ss: StateService;
+    work_information: FormGroup | any;
+    company_setting: FormGroup | any;
+    hr_setting: FormGroup | any;
+    isMarried: boolean = false;
+    imageLink: string = '../../../../../../assets/images/odo/8.png';
+    isChecked: boolean = false;
 
     constructor(injector: Injector) {
-        super(injector)
-        this._ss = injector.get(StateService)
+        super(injector);
+        this._ss = injector.get(StateService);
     }
 
     ngOnInit() {
-        this.feature()
-        this.initForm()
+        this.feature();
+        this.initForm();
     }
 
-    initForm(){
+    initForm() {
         return this._fs._form = this._fb.group({
             employeeName: [''],
             designation: [''],
             empRefNo: [''],
+            attachment: [''],
             gender: [''],
-            f_h_name: [''],
+            guardianName: [''],
             cnicExpiry: [''],
             dateOfBirth: [''],
             email: [''],
@@ -48,8 +53,8 @@ export class CreateEmployeeAddComponent extends BaseForm implements OnInit {
             ...this.hrSettingForm()
         })
     }
-    
-    workInformationForm (){
+
+    workInformationForm() {
         return this.work_information = {
             demographicLevel: [''],
             demographicValue: [''],
@@ -64,7 +69,7 @@ export class CreateEmployeeAddComponent extends BaseForm implements OnInit {
         }
     }
 
-    companySettingForm (){
+    companySettingForm() {
         return this.company_setting = {
             costCenter: [''],
             employeeBank: [''],
@@ -74,7 +79,7 @@ export class CreateEmployeeAddComponent extends BaseForm implements OnInit {
         }
     }
 
-    hrSettingForm(){
+    hrSettingForm() {
         return this.hr_setting = {
             gratuityStartDate: [''],
             resignDate: [''],
@@ -90,13 +95,46 @@ export class CreateEmployeeAddComponent extends BaseForm implements OnInit {
         }
     }
 
-    onSubmit(){
+    checkGuardian(event: any) {
+        if (event.target.checked) {
+            this._fs._form.removeControl('guardianName');
+            this._fs._form.addControl('spouseName', new FormControl(''))
+            this.isMarried = true;
+        }
+        else {
+            this._fs._form.removeControl('spouseName');
+            this._fs._form.addControl('guardianName', new FormControl(''))
+            this.isMarried = false;
+        }
+    }
+
+    uploadImage(event: any) {
+        const file = event.target.files[0];
+        if (file) {
+            if (file.type.includes('image')) {
+                if (file.type !== 'image/gif') {
+                    const reader = new FileReader();
+                    reader.onload = (e: any) => {
+                        this.imageLink = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                    this._toastr.success('Succefully Upload');
+                }
+                else this._toastr.error('Please Select only JPEG, JPG, PNG File');
+            }
+            else this._toastr.error('Please Select only JPEG, JPG, PNG File');
+        }
+    }
+
+    onSubmit() {
+        this.isChecked = this.isLeave?.nativeElement?.check
+        
         console.log(this._fs._form.value);
     }
 
     feature() {
         document.getElementById("FileInput")!.addEventListener('change', (res: any) => {
-            const labelVal: string = document.querySelector(".title")!.textContent!;
+            const labelVal: any = document.querySelector(".title")?.textContent;
             const oldfileName: string = (res.target as HTMLInputElement).value;
             const fileName: string = (res.target as HTMLInputElement).value.split('\\').pop()!;
 

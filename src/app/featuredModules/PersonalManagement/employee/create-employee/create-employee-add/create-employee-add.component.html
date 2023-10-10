@@ -58,8 +58,8 @@
                      <div class="col-lg-2 col-md-2 col-sm-4 col-4 my-2 p-0">
                         <div>
                            <label class="filelabel">
-                              <img src="../../../../../../assets/images/odo/8.png" class="img-fluid">
-                              <input class="FileUpload1" id="FileInput" name="booking_attachment" type="file" />
+                              <img [src]="imageLink" class="img-fluid">
+                              <input class="FileUpload1" id="FileInput" type="file" formControlName="attachment" (change)="uploadImage($event)" />
                            </label>
                         </div>
                      </div>
@@ -69,8 +69,17 @@
                      <div class="col-lg-6 my-2">
                         <di-dd label="Marital Status" [group]="_fs._form" [req]="false" [url]="URLz.MARITAL_STATUS" control="maritalStatus"></di-dd>
                      </div>
-                     <div class="col-lg-6 my-2">
-                        <di-text label="Father/Husband Name" control="f_h_name" [group]="_fs._form"></di-text>
+                     <div class="col-lg-6 my-2" *ngIf="!isMarried">
+                        <di-text label="Guardian's Name" control="guardianName" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2" *ngIf="isMarried">
+                        <di-text label="Spouse's Name" control="spouseName" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" (click)="checkGuardian($event)">
+                        <label class="form-check-label ml-4" for="flexCheckDefault">
+                          If Married
+                        </label>
                      </div>
                      <div class="col-lg-6 my-2">
                         <di-text label="NIC Number" control="cinicNo" [group]="_fs._form"></di-text>
@@ -137,7 +146,7 @@
                                        </div>
                                        <div class="col-lg-12 my-2">
                                           <div class="form-group row my-0">
-                                             <label class="col-sm-3 col-form-label">Demographic Value</label>
+                                             <label class="col-sm-3 col-form-label">Organizational Value</label>
                                              <div class="col-sm-9">
                                                 <select class="form-control" id="levelTwo">
                                                    <option selected="">Multi Select</option>
@@ -237,91 +246,27 @@
                                  HR Setting
                               </h3>
                               <div class="col-lg-6 my-2">
-                                 <!-- <div class="form-group row my-0">
-                                    <label class="col-sm-3 col-form-label">Gratuity Start Date</label>
-                                    <div class="col-sm-9">
-                                       <input class="form-control" type="date">
-                                    </div>
-                                 </div> -->
                                  <di-text label="Gratuity Start Date" control="gratuityStartDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <!-- <div class="form-group row my-0">
-                                    <label class="col-sm-3 col-form-label">Resign Date</label>
-                                    <div class="col-sm-9">
-                                       <input class="form-control" type="date">
-                                    </div>
-                                 </div> -->
                                  <di-text label="Resign Date" control="resignDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <!-- <div class="form-group row my-0">
-                                    <label class="col-sm-3 col-form-label">Retirement Date</label>
-                                    <div class="col-sm-9">
-                                       <input class="form-control" type="date">
-                                    </div>
-                                 </div> -->
                                  <di-text label="Retirement Date" control="retirementDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <!-- <div class="form-group row my-0">
-                                    <label class="col-sm-3 col-form-label">Leaving Reason</label>
-                                    <div class="col-sm-9">
-                                       <select class="form-control" id="levelTwo">
-                                          <option selected="">Select</option>
-                                          <option>
-                                             System
-                                          </option>
-                                          <option>
-                                             Active Directory
-                                          </option>
-                                       </select>
-                                    </div>
-                                 </div> -->
                                  <di-dd label="Leaving Reason" [group]="_fs._form" control="leavingReason" [url]="URLz.LEAVING_REASON" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <!-- <div class="form-group row my-0">
-                                    <label class="col-sm-3 col-form-label">Approver</label>
-                                    <div class="col-sm-9">
-                                       <select class="form-control" id="levelTwo">
-                                          <option selected="">Select</option>
-                                          <option>
-                                             System
-                                          </option>
-                                          <option>
-                                             Active Directory
-                                          </option>
-                                       </select>
-                                    </div>
-                                 </div> -->
                                  <di-dd label="Approver" [group]="_fs._form" control="approver" [url]="URLz.GET_ALL_EMPLOYEE" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <!-- <div class="form-group row my-0">
-                                    <label class="col-sm-3 col-form-label">Confirmation Date</label>
-                                    <div class="col-sm-9">
-                                       <input class="form-control" type="date">
-                                    </div>
-                                 </div> -->
                                  <di-text label="Confirmation Date" control="confirmationDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <!-- <div class="form-group row my-0">
-                                    <label class="col-sm-3 col-form-label">Leaving Date</label>
-                                    <div class="col-sm-9">
-                                       <input class="form-control" type="date">
-                                    </div>
-                                 </div> -->
                                  <di-text label="Leaving Date" control="leavingDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <!-- <div class="form-group row my-0">
-                                    <label class="col-sm-3 col-form-label">Seniority Date</label>
-                                    <div class="col-sm-9">
-                                       <input class="form-control" type="date">
-                                    </div>
-                                 </div> -->
                                  <di-text label="Seniority Date" control="seniorityDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
                               </div>
                               <div class="col-lg-6 my-2">
@@ -341,15 +286,7 @@
                                  </div>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <!-- <div class="form-group row my-0">
-                                    <label class="col-sm-3 col-form-label">Has Leaved</label>
-                                    <div class="col-sm-9">
-                                       <div class="check__radio__div">
-                                          <input class="form-check-input" type="checkbox" id="gridCheck">
-                                       </div>
-                                    </div>
-                                 </div> -->
-                                 <di-text label="Has Leaved" control="hasLeaved" type="checkbox" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="check__radio__div"></di-text>
+                                 <di-text label="Has Leaved" control="hasLeaved" type="checkbox" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="check__radio__div" #is_leave></di-text>
                               </div>
                            </div>
                         </div>
