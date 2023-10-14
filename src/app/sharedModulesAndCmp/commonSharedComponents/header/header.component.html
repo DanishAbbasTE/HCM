@@ -58,153 +58,27 @@
                 Configuration
               </a>
               <ul class="dropdown-menu brop_ul" aria-labelledby="navbarDropdownMenuLink">
-                <li>
-                  <a class="dropdown-item head_item" href="javascript:void(0);">Bank</a>
-                </li>
-                <li>
-                  <a class="dropdown-item " [routerLink]="'/Personal_Management/banks/bank_add'">Bank</a>
-                </li>
-                <li>
-                  <a class="dropdown-item head_item" href="javascript:void(0);">Demographic</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" [routerLink]="'/Personal_Management/demographic/demo_graphic_list'">
-                    Demographic Setup
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" [routerLink]="'/Personal_Management/demographic/org_list'">
-                    Organization
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item head_item" href="javascript:void(0);">Employee</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/designation_list'">
-                    Designation
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/create_employee_list'">
-                    Create Employee
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/employee_category_list'">
-                    Employee Category
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/gender_list'">
-                    Gender
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/marital_status_list'">
-                    Marital Satus
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/policy_defined_list'">
-                    Policy Defined
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/religion_list'">
-                    Religion
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/weekly_off_list'">
-                    Weekly off
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/gazetted_holidays'">
-                    Gazetted Holidays
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/qualification_level_list'">
-                    Qualification Level
-                  </a>
-                </li>
-                <!-- <li class="dropdown-submenu">
-                  <a class="dropdown-item dropdown-toggle" href="javascript:void(0);">Bank</a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" [routerLink]="'/Personal_Management/banks/bank_add'">
-                        Bank
-                      </a>
-                    </li>
-                  </ul>
-                </li> -->
-                <!-- <li class="dropdown-submenu">
-                  <a class="dropdown-item dropdown-toggle" href="javascript:void(0);">Demographic</a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" [routerLink]="'/Personal_Management/demographic/demo_graphic_list'">
-                        Demographic Setup
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="'/Personal_Management/demographic/org_list'">
-                        Organization
-                      </a>
-                    </li>
-                  </ul>
-                </li> -->
-                <!-- <li class="dropdown-submenu">
-                  <a class="dropdown-item dropdown-toggle" href="javascript:void(0);">Employee</a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/designation_list'">
-                        Designation
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/employee_category_list'">
-                        Employee Category
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/gender_list'">
-                        Gender
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/marital_satus_list'">
-                        Marital Satus
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/policy_defined_list'">
-                        Policy Defined
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/religion_list'">
-                        Religion
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/weekly_off_list'">
-                        Weekly off
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/gazetted_holidays'">
-                        Gazetted Holidays
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" [routerLink]="'/Personal_Management/employee/qualification_level_list'">
-                        Qualification Level
-                      </a>
-                    </li>
-                  </ul>
-                </li> -->
+                <ng-container *ngFor="let item of dropDownData">
+                  <li>
+                    <a [class]="item.class" href="javascript:void(0);">{{ item.title }}</a>
+                  </li>
+                  <li *ngFor="let subItem of item.data">
+                    <a [class]="subItem.class" [routerLink]="subItem.path">{{ subItem.title }}</a>
+                  </li>
+                </ng-container>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Language
+              </a>
+              <ul class="dropdown-menu brop_ul" aria-labelledby="navbarDropdownMenuLink">
+                <ng-container *ngFor="let lang of language">
+                  <li (click)="setLanguageEnvironment(lang)">
+                    <a class="dropdown-item head_item" href="javascript:void(0);" #lang>{{lang.title}}</a>
+                  </li>
+                </ng-container>
               </ul>
             </li>
           </ul>
@@ -251,96 +125,21 @@
         </div>
         <div class="listing__side__bar">
           <ul>
-            <li>
-              <a href="javascript:void(0);" class="first_lvl">
-                Employees
-              </a>
-              <ul>
-                <li>
-                  <a href="javascript:void(0);" class="second_lvl">
-                    Employees
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0);" class="second_lvl">
-                    Contracts
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0);" class="second_lvl">
-                    All Contracts
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="javascrip:void(0);" class="first_lvl">
-                Departments
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0);" class="first_lvl">
-                Reporting
-              </a>
-              <ul>
-                <li>
-                  <a href="javascript:void(0);" class="second_lvl">
-                    Contracts
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="javascript:void(0);" class="first_lvl">
-                Configuration
-              </a>
-              <ul>
-                <li>
-                  <a href="javascript:void(0);" class="second_lvl">
-                    Settings
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0);" class="second_lvl">
-                    Employee
-                  </a>
-                  <ul>
-                    <li>
-                      <a href="javascript:void(0);" class="third_lvl">
-                        Departments
-                      </a>
-                    </li>
-                    <li>
-                      <a href="javascript:void(0);" class="third_lvl">
-                        Work Locations
-                      </a>
-                    </li>
-                    <li>
-                      <a href="javascript:void(0);" class="third_lvl">
-                        Departure Reasons
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="javascript:void(0);" class="second_lvl">
-                    Recruitment
-                  </a>
-                  <ul>
-                    <li>
-                      <a href="javascript:void(0);" class="third_lvl">
-                        Job Positions
-                      </a>
-                    </li>
-                    <li>
-                      <a href="javascript:void(0);" class="third_lvl">
-                        Employment Types
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
+            <ng-container *ngFor="let item of sideBarData">
+              <li>
+                <a href="javascript:void(0);" [class]="item.class">{{ item.title }}</a>
+                <ul *ngIf="item.data.length > 0">
+                  <li *ngFor="let subItem of item.data">
+                    <a href="javascript:void(0);" [class]="subItem.class">{{ subItem.title }}</a>
+                    <ul *ngIf="subItem.subData && subItem.subData.length > 0">
+                      <li *ngFor="let thirdItem of subItem.subData">
+                        <a href="javascript:void(0);" [class]="thirdItem.class">{{ thirdItem.title }}</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ng-container>
           </ul>
         </div>
       </div>

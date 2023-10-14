@@ -29,13 +29,29 @@ export class StateService {
 
   public BLOOD_GROUP = [
     {id: 1, title: 'AB+'},
-    {id: 1, title: 'AB-'},
-    {id: 1, title: 'A+'},
-    {id: 1, title: 'A-'},
-    {id: 1, title: 'B+'},
-    {id: 1, title: 'B-'},
-    {id: 1, title: 'O+'},
-    {id: 1, title: 'O-'}
+    {id: 2, title: 'AB-'},
+    {id: 3, title: 'A+'},
+    {id: 3, title: 'A-'},
+    {id: 4, title: 'B+'},
+    {id: 5, title: 'B-'},
+    {id: 6, title: 'O+'},
+    {id: 7, title: 'O-'}
+  ]
+
+  public USER_GROUP = [
+    {id: 1, title: ['1']},
+    {id: 2, title: ['2']},
+    {id: 3, title: ['3']},
+    {id: 4, title: ['4']},
+  ]
+  
+  public REALATIONS = [
+    {id: 1, title: 'Mother'},
+    {id: 2, title: 'Father'},
+    {id: 3, title: 'Son'},
+    {id: 4, title: 'Daughter'},
+    {id: 5, title: 'Brother'},
+    {id: 6, title: 'Sister'},
   ]
 
 }

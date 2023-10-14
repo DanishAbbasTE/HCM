@@ -1,7 +1,9 @@
 import { Component, ElementRef, Injector, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { URLz } from 'src/app/enums/url.enum';
 import { StateService } from 'src/app/services/state.service';
 import { BaseForm } from 'src/app/sharedClasses/base-from';
+import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'app-create-employee-add',
@@ -9,7 +11,6 @@ import { BaseForm } from 'src/app/sharedClasses/base-from';
     styleUrls: ['./create-employee-add.component.css']
 })
 export class CreateEmployeeAddComponent extends BaseForm implements OnInit {
-    @ViewChild('is_leave') isLeave?: ElementRef<any>;
     _ss: StateService;
     work_information: FormGroup | any;
     company_setting: FormGroup | any;
@@ -48,6 +49,13 @@ export class CreateEmployeeAddComponent extends BaseForm implements OnInit {
             bloodGroup: [''],
             placeOfBirth: [''],
             permAddress: [''],
+            nexToKinName: [''],
+            nexToKinContact: [''],
+            nexToKinRelationId: [''],
+            nexToKinCNIC: [''],
+            emergencyContactName: [''],
+            emergencyContactNumber: [''],
+            emergencyContactRelationId: [''],
             ...this.workInformationForm(),
             ...this.companySettingForm(),
             ...this.hrSettingForm()
@@ -87,7 +95,6 @@ export class CreateEmployeeAddComponent extends BaseForm implements OnInit {
             approver: [''],
             leavingDate: [''],
             userGroup: [''],
-            designDate: [''],
             leavingReason: [''],
             confirmationDate: [''],
             seniorityDate: [''],
@@ -126,11 +133,56 @@ export class CreateEmployeeAddComponent extends BaseForm implements OnInit {
         }
     }
 
-    onSubmit() {
-        this.isChecked = this.isLeave?.nativeElement?.check
+    changeToApprover(event: any){
+        console.log(event);
         
-        console.log(this._fs._form.value);
+        return event.nexToKinCNIC;
     }
+
+    onSubmit() {
+        let isLeave: any = document?.getElementById('hasLeave');
+        let leaveCheck = isLeave.childNodes[0].childNodes[1].childNodes[0]
+        this.isChecked = leaveCheck?.checked ? true : false;
+        this._fs._form.markAllAsTouched();
+        this._vs._submitted = true;
+        this._vs.logForm();
+        if (this._fs._form.valid) {
+            this._fs._form.patchValue({hasLeaved: this.isChecked})
+            if (this._activeId) {
+                this._fs._form.addControl('id', new FormControl(this._activeId));
+            }
+            this._http.create({
+                url: environment.API_URL,
+                endpoint: URLz.SAVE_EMPLOYEE,
+                body: this._fs._form.value
+            })
+            .subscribe((res) => {
+                if (res != null) {
+                    this._swl.prompts({
+                        title: this._activeId ? 'Update' : 'Save',
+                        text: "Want to leave or stay here",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            this._swl.swal('SuccessFully submited!', 'success', 'success').then((result) => {
+                                this._fhs.relocate('/Personal_Management/employee/gender_list')
+                            })
+                            this._vs._toastr_success('SuccessFully submited', 'success');
+                        } else if (result.isDismissed) {
+                            this._swl.swal('SuccessFully submited!', 'success', 'success')
+                            this._vs._toastr_success('SuccessFully submited', 'success');
+                            this._fs._form.reset();
+                            this._fs._form.removeControl('id');
+                            this._fhs.relocate('/Personal_Management/employee/gender_list');
+                            this._fs._form.get('companyId').patchValue(1);
+                            this._activeId = '';
+                            this._fs._form.get('IsActive').patchValue(true);
+                        }
+                    })
+                }
+            })
+        }
+    }
+
 
     feature() {
         document.getElementById("FileInput")!.addEventListener('change', (res: any) => {

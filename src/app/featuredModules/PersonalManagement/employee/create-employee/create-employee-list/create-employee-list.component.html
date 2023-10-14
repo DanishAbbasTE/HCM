@@ -170,12 +170,12 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-6 on__desk__px_1">
                       <div class="list__type__btns">
                         <!-- use active class for show active -->
-                        <a href="javascript:void(0);" class="g_l_Active" data-toggle="tooltip" title="Kanban">
+                        <a href="javascript:void(0);" class="g_l_Active" data-toggle="tooltip" (click)="gridActive()" title="Kanban">
                           <span>
                             <i class="fa fa-th-large"></i>
                           </span>
                         </a>
-                        <a href="javascript:void(0);" class="g_l_Active" data-toggle="tooltip" title="List">
+                        <a href="javascript:void(0);" class="g_l_Active" data-toggle="tooltip" (click)="listActive()" title="List">
                           <span>
                             <i class="fa fa-bars"></i>
                           </span>
@@ -243,20 +243,6 @@
                   {{i + (_tbls[URLz.GET_ALL_EMPLOYEE].index * _tbls[URLz.GET_ALL_EMPLOYEE].size) + 1}}
                 </td>
               </ng-container>
-              <!-- <ng-container matColumnDef="actions">
-                <th class="pl-3" mat-header-cell *matHeaderCellDef>
-                  <i class="fas fa-redo text-info pointer px-2"></i>
-                  <i class="fa fa-search text-info pointer px-2"></i>
-                </th>
-                <td class="" mat-cell *matCellDef="let item">
-                  <i class="fa fa-edit text-info px-2 pointer"></i>
-                </td>
-              </ng-container>
-              <ng-container matColumnDef="company_id">
-                <th class="text-center" mat-header-cell *matHeaderCellDef> {{'Company Id'}} </th>
-                <td class="px-3" mat-cell *matCellDef="let item">
-                  {{item?.companyId}} </td>
-              </ng-container> -->
               <ng-container matColumnDef="employee_name">
                 <th class="pl-3" mat-header-cell *matHeaderCellDef> {{'Employee Name'}} </th>
                 <td class="px-3" mat-cell *matCellDef="let item"> {{ item?.employeeName }} </td>

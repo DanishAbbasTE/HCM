@@ -49,4 +49,20 @@ export class CreateEmployeeListComponent extends BaseListClass implements OnInit
     this._reset(URLz.GET_ALL_EMPLOYEE);
     this._refresh(URLz.GET_ALL_EMPLOYEE)
   }
+
+  gridActive() {
+    const gridElements = document.querySelectorAll('.grid__view__col');
+    const listElements = document.querySelectorAll('.list__view__col');
+
+    gridElements.forEach(element => element.classList.remove('d-none'));
+    listElements.forEach(element => element.classList.add('d-none'));
+  }
+
+  listActive() {
+    const gridElements = document.querySelectorAll('.grid__view__col');
+    const listElements = document.querySelectorAll('.list__view__col');
+
+    gridElements.forEach(element => element.classList.add('d-none'));
+    listElements.forEach(element => element.classList.remove('d-none'));
+  }
 }

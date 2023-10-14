@@ -13,7 +13,7 @@ export class TextComponent extends BaseForm implements OnInit {
   @Input() req: boolean = false;
   @Input() group: FormGroup | any;
   @Input() type: string = 'text';
-  @Input() value: string = '';
+  @Input() value: any = '';
   @Input() placeholder: string = '';
   @Input() inpClass: string = 'form-control';
   @Input() labelClass: string = 'col-sm-2 col-form-label';

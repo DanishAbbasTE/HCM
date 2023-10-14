@@ -69,18 +69,6 @@
                      <div class="col-lg-6 my-2">
                         <di-dd label="Marital Status" [group]="_fs._form" [req]="false" [url]="URLz.MARITAL_STATUS" control="maritalStatus"></di-dd>
                      </div>
-                     <div class="col-lg-6 my-2" *ngIf="!isMarried">
-                        <di-text label="Guardian's Name" control="guardianName" [group]="_fs._form"></di-text>
-                     </div>
-                     <div class="col-lg-6 my-2" *ngIf="isMarried">
-                        <di-text label="Spouse's Name" control="spouseName" [group]="_fs._form"></di-text>
-                     </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" (click)="checkGuardian($event)">
-                        <label class="form-check-label ml-4" for="flexCheckDefault">
-                          If Married
-                        </label>
-                     </div>
                      <div class="col-lg-6 my-2">
                         <di-text label="NIC Number" control="cinicNo" [group]="_fs._form"></di-text>
                      </div>
@@ -112,7 +100,40 @@
                         <di-text label="Address" control="address" [group]="_fs._form"></di-text>
                      </div>
                      <div class="col-lg-6 my-2">
+                        <di-text label="Next To Kin Name" control="nexToKinName" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Next To Kin contact" control="nexToKinContact" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-dd label="Next To Kin Relation" [group]="_fs._form" control="nexToKinRelationId" [render]="_ss.REALATIONS"></di-dd>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Next To Kin Cnic" control="nexToKinCNIC" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Emegency Contact Name" control="emergencyContactName" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Emergency Contact Number" control="emergencyContactNumber" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-dd label="Emergency Contact Relation" [group]="_fs._form" control="emergencyContactRelationId" [render]="_ss.REALATIONS"></di-dd>
+                     </div>
+                     <div class="col-lg-6 my-2">
                         <di-text label="Permanent Address" control="permAddress" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2" *ngIf="!isMarried">
+                        <di-text label="Guardian's Name" control="guardianName" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2" *ngIf="isMarried">
+                        <di-text label="Spouse's Name" control="spouseName" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" (click)="checkGuardian($event)">
+                        <label class="form-check-label ml-4" for="flexCheckDefault">
+                          If Married
+                        </label>
                      </div>
                   </div>
                </div>
@@ -127,7 +148,7 @@
                   </li>
                   <li class="nav-item">
                      <a class="nav-link " id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                        aria-controls="contact" aria-selected="false">HR Settings</a>
+                     aria-controls="contact" aria-selected="false">HR Settings</a>
                   </li>
                </ul>
                <div class="col-12">
@@ -146,7 +167,7 @@
                                        </div>
                                        <div class="col-lg-12 my-2">
                                           <div class="form-group row my-0">
-                                             <label class="col-sm-3 col-form-label">Organizational Value</label>
+                                             <label class="col-sm-3 col-form-label">Demographic Value</label>
                                              <div class="col-sm-9">
                                                 <select class="form-control" id="levelTwo">
                                                    <option selected="">Multi Select</option>
@@ -159,6 +180,7 @@
                                                 </select>
                                              </div>
                                           </div>
+                                          <!-- <di-dd label="Demographic Value" [group]="_fs._form" control="demographicValue" [render]="_ss.USER_GROUP" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd> -->
                                        </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -183,6 +205,7 @@
                                                 </select>
                                              </div>
                                           </div>
+                                          <!-- <di-dd label="Organizational Value" [group]="_fs._form" control="organizationValue" [render]="_ss.USER_GROUP" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd> -->
                                        </div>
                                     </div>
                                     <div class="col-12">
@@ -197,7 +220,7 @@
                                              <di-text label="Joining Date" control="joiningDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
                                           </div>
                                           <div class="col-lg-6 my-2">
-                                             <di-dd label="Policy Defined Name" [group]="_fs._form" control="poliDefName" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                             <di-dd label="Policy Defined Name" [group]="_fs._form" control="poliDefName" [params]="{query: {companyId: false}}" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
                                           </div>
                                           <div class="col-lg-6 my-2">
                                              <di-dd label="Employee Category" [group]="_fs._form" control="employeeCategory" [url]="URLz.EMPLOYEE_CATEGORY" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
@@ -258,7 +281,7 @@
                                  <di-dd label="Leaving Reason" [group]="_fs._form" control="leavingReason" [url]="URLz.LEAVING_REASON" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <di-dd label="Approver" [group]="_fs._form" control="approver" [url]="URLz.GET_ALL_EMPLOYEE" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                 <di-dd label="Approver" [group]="_fs._form" control="approver" (changeKey)="changeToApprover($event)" [url]="URLz.GET_ALL_EMPLOYEE" [params]="{query: {CompnayId: 1}}" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
                               </div>
                               <div class="col-lg-6 my-2">
                                  <di-text label="Confirmation Date" control="confirmationDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
@@ -284,9 +307,10 @@
                                        </select>
                                     </div>
                                  </div>
+                                 <!-- <di-dd label="User Group" [group]="_fs._form" control="userGroup" [render]="_ss.USER_GROUP" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd> -->
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <di-text label="Has Leaved" control="hasLeaved" type="checkbox" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="check__radio__div" #is_leave></di-text>
+                                 <di-text label="Has Leaved" control="hasLeaved" type="checkbox" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="check__radio__div" id="hasLeave"></di-text>
                               </div>
                            </div>
                         </div>

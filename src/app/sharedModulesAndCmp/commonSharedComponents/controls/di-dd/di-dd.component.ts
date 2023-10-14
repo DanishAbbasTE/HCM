@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Injector, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Injector, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { URLz } from 'src/app/enums/url.enum';
 import { BaseForm } from 'src/app/sharedClasses/base-from';
@@ -23,7 +23,7 @@ export class DiDdComponent extends BaseForm implements OnInit {
   @Input() selectClass: string = 'form-control';
   @Input() labelClass: string = 'col-sm-2 col-form-label';
   @Input() divClass: string = 'col-sm-10';
-  
+  @Output() changeKey: EventEmitter<any> = new EventEmitter()
   renderDropDown: any;
 
   constructor(injector: Injector) {
@@ -53,8 +53,10 @@ export class DiDdComponent extends BaseForm implements OnInit {
     })
   }
 
-  renderDropData(data: any): string {
-    return data.title;
+  renderDropData(data: any): any {
+    if(data.title){
+      return data.title;
+    }
+    this.changeKey.emit(data)
   }
-
 }

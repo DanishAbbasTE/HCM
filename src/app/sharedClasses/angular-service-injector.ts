@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DatePipe, Location } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 // # 1 SOLID PRINCIPLE (Single Responsibility Principle)
 // 1. Single responsibility principle: a class should have one, and only one, reason to change;
@@ -18,6 +19,7 @@ export abstract class AngularServiceInjector   {
   _location: Location
   _datePipe: DatePipe
   _toastr: ToastrService;
+  _translate: TranslateService
   constructor(public injector: Injector) {
     this._router = injector.get(Router);
     this._activeRoute = injector.get(ActivatedRoute);
@@ -25,5 +27,6 @@ export abstract class AngularServiceInjector   {
     this._location = injector.get(Location);
     this._datePipe = injector.get(DatePipe);
     this._toastr = injector.get(ToastrService);
+    this._translate = injector.get(TranslateService);
   }
 }

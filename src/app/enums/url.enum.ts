@@ -64,11 +64,12 @@ export enum URLz {
   SAVE_WEEKLY_OFFS = "WeeklyOff/SaveWeeklyOff",
   SAVE_GAZETTED_HOLIDAY="GazettedHoliday/SaveGazettedHoliday",
   SAVE_QUALIFICATION_LEVEL ="QulificationLevel/SaveQualificationLevel",
+  SAVE_EMPLOYEE = "Employee/SaveEmployee",
 
   // =================== FOR DROPDOWNS ===================== //
 
   RELIGION = "Religion/LoadAllReligionData",
-  MARITAL_STATUS = "MartialStatus/LoadAllMartialStatusData", //result conflict
+  MARITAL_STATUS = "MartialStatus/LoadAllMartialStatusData",
   USER_GENDER = "Gender/LoadAllGenderData",
   DESIGNATION = "Designation/LoadAllDesignationData",
   USER_GROUP = "User/GetAllUserGroups",
@@ -76,7 +77,7 @@ export enum URLz {
   COST_CENTER = "Costcenter/GetAllCostCenter",
   COMPANY_BANK = "Banks/LoadAllBankData",
   CURRENCY = "Currency/GetAllCurrency",
-  EMPLOYEE_TYPE = "Employee/GetAllEmployeeTypes", //result conflict
+  EMPLOYEE_TYPE = "Employee/GetAllEmployeeTypes",
   LEAVING_REASON = "LeavingReason/LoadAllLeavingReasonData",
   QUALIFICATION_LEVEL = "QulificationLevel/LoadAllQualificationLevelData",
   QUALIFICATION = "Qualification/LoadAllQualificationData"
