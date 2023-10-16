@@ -49,7 +49,7 @@
                            <di-text placeholder="Employee's Name" control="employeeName" [group]="_fs._form" inpClass="form-control big_input_class" divClass="col-sm-12"></di-text>
                         </div>
                         <div class="col-lg-12">
-                           <di-dd default="Designation" [group]="_fs._form" control="designation" [url]="URLz.DESIGNATION" divClass="col-sm-12" selectClass="form-control second_big_input_class"></di-dd>
+                           <di-dd default="Designation" [group]="_fs._form" control="designation" [url]="URLz.DESIGNATION" divClass="col-sm-12" selectClass="form-control second_big_input_class selectpicker"></di-dd>
                         </div>
                         <div class="col-lg-4">
                            <di-text placeholder="Employee Ref No" control="empRefNo" [group]="_fs._form" inpClass="form-control third_select_class" divClass="col-sm-12"></di-text>
@@ -64,10 +64,10 @@
                         </div>
                      </div>
                      <div class="col-lg-6 my-2">
-                        <di-dd label="Gender" [group]="_fs._form" [req]="false" [url]="URLz.USER_GENDER" control="gender"></di-dd>
+                        <di-dd label="Gender" [group]="_fs._form" [req]="false" [url]="URLz.USER_GENDER" control="gender" selectClass="selectpicker w-100"></di-dd>
                      </div>
                      <div class="col-lg-6 my-2">
-                        <di-dd label="Marital Status" [group]="_fs._form" [req]="false" [url]="URLz.MARITAL_STATUS" control="maritalStatus"></di-dd>
+                        <di-dd label="Marital Status" [group]="_fs._form" [req]="false" [url]="URLz.MARITAL_STATUS" control="maritalStatus" selectClass="selectpicker w-100"></di-dd>
                      </div>
                      <div class="col-lg-6 my-2" *ngIf="!isMarried">
                         <di-text label="Guardian's Name" control="guardianName" [group]="_fs._form"></di-text>
@@ -88,7 +88,7 @@
                         <di-text label="CNIC Expiry" control="cnicExpiry" [group]="_fs._form"></di-text>   
                      </div>
                      <div class="col-lg-6 my-2">
-                        <di-dd label="Select Religion" [group]="_fs._form" [req]="false" [url]="URLz.RELIGION" control="religion"></di-dd>
+                        <di-dd label="Select Religion" [group]="_fs._form" [req]="false" [url]="URLz.RELIGION" control="religion" selectClass="selectpicker w-100"></di-dd>
                      </div>
                      <div class="col-lg-6 my-2">
                         <di-text label="Birth of Date" type="date" control="dateOfBirth" [group]="_fs._form"></di-text>
@@ -100,7 +100,7 @@
                         <di-text label="Email" control="email" [group]="_fs._form"></di-text> 
                      </div>
                      <div class="col-lg-6 my-2">
-                        <di-dd label="Blood Group" [group]="_fs._form" control="bloodGroup" [render]="_ss.BLOOD_GROUP"></di-dd>
+                        <di-dd label="Blood Group" [group]="_fs._form" control="bloodGroup" [render]="_ss.BLOOD_GROUP" selectClass="selectpicker w-100"></di-dd>
                      </div>
                      <div class="col-lg-6 my-2">
                         <di-text label="Telephone" control="telephone" [group]="_fs._form"></di-text>
@@ -142,23 +142,10 @@
                                           Demographic
                                        </h3>
                                        <div class="col-lg-12 my-2">
-                                          <di-dd label="Demographic Level" [group]="_fs._form" control="demographicLevel" [params]="{query: {companyId: 1, levelId: 0}}" [url]="URLz.CONFIG_DEMO_GRAPHIC" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                          <di-dd label="Demographic Level" [group]="_fs._form" control="demographicLevel" [params]="{query: {companyId: 1, levelId: 0}}" [url]="URLz.CONFIG_DEMO_GRAPHIC" labelClass="col-sm-3 col-form-label" divClass="col-sm-9" selectClass="selectpicker w-100"></di-dd>
                                        </div>
                                        <div class="col-lg-12 my-2">
-                                          <div class="form-group row my-0">
-                                             <label class="col-sm-3 col-form-label">Organizational Value</label>
-                                             <div class="col-sm-9">
-                                                <select class="form-control" id="levelTwo">
-                                                   <option selected="">Multi Select</option>
-                                                   <option>
-                                                      System
-                                                   </option>
-                                                   <option>
-                                                      Active Directory
-                                                   </option>
-                                                </select>
-                                             </div>
-                                          </div>
+                                          <di-multi-dd></di-multi-dd>
                                        </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -166,10 +153,10 @@
                                           Organizational
                                        </h3>
                                        <div class="col-lg-12 my-2">
-                                          <di-dd label="Organizational Level" [group]="_fs._form" control="organizationLevel" [url]="URLz.COFIG_ORGANIZATION_DEMO_GRAPHIC" [params]="{query: {companyId: 1}}" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                          <di-dd label="Organizational Level" [group]="_fs._form" control="organizationLevel" [url]="URLz.COFIG_ORGANIZATION_DEMO_GRAPHIC" [params]="{query: {companyId: 1}}" labelClass="col-sm-3 col-form-label" divClass="col-sm-9" selectClass="selectpicker w-100"></di-dd>
                                        </div>
                                        <div class="col-lg-12 my-2">
-                                          <div class="form-group row my-0">
+                                          <!-- <div class="form-group row my-0">
                                              <label class="col-sm-3 col-form-label">Organizational Value</label>
                                              <div class="col-sm-9">
                                                 <select class="form-control" id="levelTwo">
@@ -182,7 +169,8 @@
                                                    </option>
                                                 </select>
                                              </div>
-                                          </div>
+                                          </div> -->
+                                          <di-multi-dd></di-multi-dd>
                                        </div>
                                     </div>
                                     <div class="col-12">
@@ -197,16 +185,16 @@
                                              <di-text label="Joining Date" control="joiningDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
                                           </div>
                                           <div class="col-lg-6 my-2">
-                                             <di-dd label="Policy Defined Name" [group]="_fs._form" control="poliDefName" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                             <di-dd label="Policy Defined Name" [group]="_fs._form" control="poliDefName" labelClass="col-sm-3 col-form-label" divClass="col-sm-9" selectClass="selectpicker w-100"></di-dd>
                                           </div>
                                           <div class="col-lg-6 my-2">
-                                             <di-dd label="Employee Category" [group]="_fs._form" control="employeeCategory" [url]="URLz.EMPLOYEE_CATEGORY" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                             <di-dd label="Employee Category" [group]="_fs._form" control="employeeCategory" [url]="URLz.EMPLOYEE_CATEGORY" labelClass="col-sm-3 col-form-label" divClass="col-sm-9" selectClass="selectpicker w-100"></di-dd>
                                           </div>
                                           <div class="col-lg-6 my-2">
                                              <di-text label="FTE Count" control="fteCount" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
                                           </div>
                                           <div class="col-lg-6 my-2">
-                                             <di-dd label="Employee Type" control="employeeType" [group]="_fs._form" [url]="URLz.EMPLOYEE_TYPE" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                             <di-dd label="Employee Type" control="employeeType" [group]="_fs._form" [url]="URLz.EMPLOYEE_TYPE" labelClass="col-sm-3 col-form-label" divClass="col-sm-9" selectClass="selectpicker w-100"></di-dd>
                                           </div>
                                        </div>
                                     </div>
@@ -222,19 +210,19 @@
                                  company Setting
                               </h3>
                               <div class="col-lg-6 my-2">
-                                 <di-dd label="Cost Center" [group]="_fs._form" control="costCenter" [url]="URLz.COST_CENTER" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                 <di-dd label="Cost Center" [group]="_fs._form" control="costCenter" [url]="URLz.COST_CENTER" labelClass="col-sm-3 col-form-label" divClass="col-sm-9" selectClass="selectpicker w-100"></di-dd>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <di-dd label="Employee Bank" [group]="_fs._form" control="employeeBank" [params]="{query: {companyBank: false}}" [url]="URLz.COMPANY_BANK" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                 <di-dd label="Employee Bank" [group]="_fs._form" control="employeeBank" [params]="{query: {companyBank: false}}" [url]="URLz.COMPANY_BANK" labelClass="col-sm-3 col-form-label" divClass="col-sm-9" selectClass="selectpicker w-100"></di-dd>
                               </div>
                               <div class="col-lg-6 my-2">
                                  <di-text label="Account Number" control="accountNumber" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <di-dd label="Company Bank" [group]="_fs._form" control="companyBank" [params]="{query: {companyBank: true}}" [url]="URLz.COMPANY_BANK" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                 <di-dd label="Company Bank" [group]="_fs._form" control="companyBank" [params]="{query: {companyBank: true}}" [url]="URLz.COMPANY_BANK" labelClass="col-sm-3 col-form-label" divClass="col-sm-9" selectClass="selectpicker w-100"></di-dd>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <di-dd label="Currency" [group]="_fs._form" control="currency" [url]="URLz.CURRENCY" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                 <di-dd label="Currency" [group]="_fs._form" control="currency" [url]="URLz.CURRENCY" labelClass="col-sm-3 col-form-label" divClass="col-sm-9" selectClass="selectpicker w-100"></di-dd>
                               </div>
                            </div>
                         </div>
@@ -255,10 +243,10 @@
                                  <di-text label="Retirement Date" control="retirementDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <di-dd label="Leaving Reason" [group]="_fs._form" control="leavingReason" [url]="URLz.LEAVING_REASON" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                 <di-dd label="Leaving Reason" [group]="_fs._form" control="leavingReason" [url]="URLz.LEAVING_REASON" labelClass="col-sm-3 col-form-label" divClass="col-sm-9" selectClass="selectpicker w-100"></di-dd>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <di-dd label="Approver" [group]="_fs._form" control="approver" [url]="URLz.GET_ALL_EMPLOYEE" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                 <di-dd label="Approver" [group]="_fs._form" control="approver" [url]="URLz.GET_ALL_EMPLOYEE" labelClass="col-sm-3 col-form-label" divClass="col-sm-9" selectClass="selectpicker w-100"></di-dd>
                               </div>
                               <div class="col-lg-6 my-2">
                                  <di-text label="Confirmation Date" control="confirmationDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
@@ -270,7 +258,7 @@
                                  <di-text label="Seniority Date" control="seniorityDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
                               </div>
                               <div class="col-lg-6 my-2">
-                                 <div class="form-group row my-0">
+                                 <!-- <div class="form-group row my-0">
                                     <label class="col-sm-3 col-form-label">User Group</label>
                                     <div class="col-sm-9">
                                        <select class="form-control" id="levelTwo">
@@ -283,7 +271,8 @@
                                           </option>
                                        </select>
                                     </div>
-                                 </div>
+                                 </div> -->
+                                 <di-multi-dd></di-multi-dd>
                               </div>
                               <div class="col-lg-6 my-2">
                                  <di-text label="Has Leaved" control="hasLeaved" type="checkbox" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="check__radio__div" #is_leave></di-text>
