@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/icons/font-awesome/all.min.css';
+@import 'assets/styles/common.css';
+@import 'assets/styles/login.css';
+@import 'assets/styles/mediaQuery.css';
+@import 'assets/styles/dash.css';
+@import 'assets/styles/listFilter.css';
+@import 'assets/styles/addPage.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

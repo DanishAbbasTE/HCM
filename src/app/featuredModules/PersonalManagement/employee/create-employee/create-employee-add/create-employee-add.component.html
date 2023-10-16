@@ -1,0 +1,326 @@
+<form autocomplete="off" [formGroup]="_fs._form" (ngSubmit)="onSubmit()">
+   <!----------------- filters area ----------------->
+   <section class="search_filter_add_area">
+      <div class="col-12">
+         <div class="row">
+            <div class="col-lg-6 col-md-6 col-12">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="Page__heading mb-0">
+                        <p>
+                           Create Employee <span class="span__slesh">/</span> <span class="span__new">New</span>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <div class="save__discard__div">
+                        <button type="submit " *ngIf="_showSave" class="third_bar_save save_btn">
+                           Save
+                        </button>
+                        <button type="button" *ngIf="_showEdit" class="third_bar_save save_btn">
+                           Edit
+                        </button>
+                        <button class="third_bar_discard save_btn">
+                           Discard
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!----------------- filters area ----------------->
+   <!----------------- add area----------------->
+
+   <section class="addAreaSection">
+      <div class="col-xl-12">
+         <div class="add_box_card">
+            <h1>
+               Create Employee
+            </h1>
+            <div class="add_contant_div">
+               <div class="col-12">
+                  <div class="row m-0">
+                     <div class="col-lg-10 col-md-10 col-sm-8 col-8 my-2 p-0">
+                        <div class="col-lg-12">
+                           <di-text placeholder="Employee's Name" control="employeeName" [group]="_fs._form" inpClass="form-control big_input_class" divClass="col-sm-12"></di-text>
+                        </div>
+                        <div class="col-lg-12">
+                           <di-dd default="Designation" [group]="_fs._form" control="designation" [url]="URLz.DESIGNATION" divClass="col-sm-12" selectClass="form-control second_big_input_class"></di-dd>
+                        </div>
+                        <div class="col-lg-4">
+                           <di-text placeholder="Employee Ref No" control="empRefNo" [group]="_fs._form" inpClass="form-control third_select_class" divClass="col-sm-12"></di-text>
+                        </div>
+                     </div>
+                     <div class="col-lg-2 col-md-2 col-sm-4 col-4 my-2 p-0">
+                        <div>
+                           <label class="filelabel">
+                              <img [src]="imageLink" class="img-fluid">
+                              <input class="FileUpload1" id="FileInput" type="file" formControlName="attachment" (change)="uploadImage($event)" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-dd label="Gender" [group]="_fs._form" [req]="false" [url]="URLz.USER_GENDER" control="gender"></di-dd>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-dd label="Marital Status" [group]="_fs._form" [req]="false" [url]="URLz.MARITAL_STATUS" control="maritalStatus"></di-dd>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="NIC Number" control="cinicNo" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="CNIC Expiry" control="cnicExpiry" [group]="_fs._form"></di-text>   
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-dd label="Select Religion" [group]="_fs._form" [req]="false" [url]="URLz.RELIGION" control="religion"></di-dd>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Birth of Date" type="date" control="dateOfBirth" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Mobile Number" control="mobileNo" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Email" control="email" [group]="_fs._form"></di-text> 
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-dd label="Blood Group" [group]="_fs._form" control="bloodGroup" [render]="_ss.BLOOD_GROUP"></di-dd>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Telephone" control="telephone" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Place Of Birth" control="placeOfBirth" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Address" control="address" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Next To Kin Name" control="nexToKinName" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Next To Kin contact" control="nexToKinContact" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-dd label="Next To Kin Relation" [group]="_fs._form" control="nexToKinRelationId" [render]="_ss.REALATIONS"></di-dd>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Next To Kin Cnic" control="nexToKinCNIC" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Emegency Contact Name" control="emergencyContactName" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Emergency Contact Number" control="emergencyContactNumber" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-dd label="Emergency Contact Relation" [group]="_fs._form" control="emergencyContactRelationId" [render]="_ss.REALATIONS"></di-dd>
+                     </div>
+                     <div class="col-lg-6 my-2">
+                        <di-text label="Permanent Address" control="permAddress" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2" *ngIf="!isMarried">
+                        <di-text label="Guardian's Name" control="guardianName" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="col-lg-6 my-2" *ngIf="isMarried">
+                        <di-text label="Spouse's Name" control="spouseName" [group]="_fs._form"></di-text>
+                     </div>
+                     <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" (click)="checkGuardian($event)">
+                        <label class="form-check-label ml-4" for="flexCheckDefault">
+                          If Married
+                        </label>
+                     </div>
+                  </div>
+               </div>
+               <ul class="nav nav-tabs nav-tabs-my" id="myTab" role="tablist">
+                  <li class="nav-item">
+                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                        aria-controls="home" aria-selected="true">Work Information</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link " id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                        aria-controls="profile" aria-selected="false">Company Setting</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link " id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                     aria-controls="contact" aria-selected="false">HR Settings</a>
+                  </li>
+               </ul>
+               <div class="col-12">
+                  <div class="tab-content" id="myTabContent">
+                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="col-12">
+                           <div class="row">
+                              <div class="col-lg-12">
+                                 <div class="row">
+                                    <div class="col-lg-6">
+                                       <h3 class="tabs__mini_heading">
+                                          Demographic
+                                       </h3>
+                                       <div class="col-lg-12 my-2">
+                                          <di-dd label="Demographic Level" [group]="_fs._form" control="demographicLevel" [params]="{query: {companyId: 1, levelId: 0}}" [url]="URLz.CONFIG_DEMO_GRAPHIC" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                       </div>
+                                       <div class="col-lg-12 my-2">
+                                          <div class="form-group row my-0">
+                                             <label class="col-sm-3 col-form-label">Demographic Value</label>
+                                             <div class="col-sm-9">
+                                                <select class="form-control" id="levelTwo">
+                                                   <option selected="">Multi Select</option>
+                                                   <option>
+                                                      System
+                                                   </option>
+                                                   <option>
+                                                      Active Directory
+                                                   </option>
+                                                </select>
+                                             </div>
+                                          </div>
+                                          <!-- <di-dd label="Demographic Value" [group]="_fs._form" control="demographicValue" [render]="_ss.USER_GROUP" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd> -->
+                                       </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                       <h3 class="tabs__mini_heading">
+                                          Organizational
+                                       </h3>
+                                       <div class="col-lg-12 my-2">
+                                          <di-dd label="Organizational Level" [group]="_fs._form" control="organizationLevel" [url]="URLz.COFIG_ORGANIZATION_DEMO_GRAPHIC" [params]="{query: {companyId: 1}}" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                       </div>
+                                       <div class="col-lg-12 my-2">
+                                          <div class="form-group row my-0">
+                                             <label class="col-sm-3 col-form-label">Organizational Value</label>
+                                             <div class="col-sm-9">
+                                                <select class="form-control" id="levelTwo">
+                                                   <option selected="">Multi Select</option>
+                                                   <option>
+                                                      System
+                                                   </option>
+                                                   <option>
+                                                      Active Directory
+                                                   </option>
+                                                </select>
+                                             </div>
+                                          </div>
+                                          <!-- <di-dd label="Organizational Value" [group]="_fs._form" control="organizationValue" [render]="_ss.USER_GROUP" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd> -->
+                                       </div>
+                                    </div>
+                                    <div class="col-12">
+                                       <div class="row m-0">
+                                          <h3 class="tabs__mini_heading w-100">
+                                             Employee STATUS
+                                          </h3>
+                                          <div class="col-lg-6 my-2">
+                                             <di-text label="Office Email" control="officeEmail" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
+                                          </div>
+                                          <div class="col-lg-6 my-2">
+                                             <di-text label="Joining Date" control="joiningDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
+                                          </div>
+                                          <div class="col-lg-6 my-2">
+                                             <di-dd label="Policy Defined Name" [group]="_fs._form" control="poliDefName" [params]="{query: {companyId: false}}" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                          </div>
+                                          <div class="col-lg-6 my-2">
+                                             <di-dd label="Employee Category" [group]="_fs._form" control="employeeCategory" [url]="URLz.EMPLOYEE_CATEGORY" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                          </div>
+                                          <div class="col-lg-6 my-2">
+                                             <di-text label="FTE Count" control="fteCount" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
+                                          </div>
+                                          <div class="col-lg-6 my-2">
+                                             <di-dd label="Employee Type" control="employeeType" [group]="_fs._form" [url]="URLz.EMPLOYEE_TYPE" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane fade " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="col-12">
+                           <div class="row m-0">
+                              <h3 class="tabs__mini_heading w-100">
+                                 company Setting
+                              </h3>
+                              <div class="col-lg-6 my-2">
+                                 <di-dd label="Cost Center" [group]="_fs._form" control="costCenter" [url]="URLz.COST_CENTER" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <di-dd label="Employee Bank" [group]="_fs._form" control="employeeBank" [params]="{query: {companyBank: false}}" [url]="URLz.COMPANY_BANK" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <di-text label="Account Number" control="accountNumber" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <di-dd label="Company Bank" [group]="_fs._form" control="companyBank" [params]="{query: {companyBank: true}}" [url]="URLz.COMPANY_BANK" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <di-dd label="Currency" [group]="_fs._form" control="currency" [url]="URLz.CURRENCY" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="col-12">
+                           <div class="row m-0">
+                              <h3 class="tabs__mini_heading w-100">
+                                 HR Setting
+                              </h3>
+                              <div class="col-lg-6 my-2">
+                                 <di-text label="Gratuity Start Date" control="gratuityStartDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <di-text label="Resign Date" control="resignDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <di-text label="Retirement Date" control="retirementDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <di-dd label="Leaving Reason" [group]="_fs._form" control="leavingReason" [url]="URLz.LEAVING_REASON" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <di-dd label="Approver" [group]="_fs._form" control="approver" (changeKey)="changeToApprover($event)" [url]="URLz.GET_ALL_EMPLOYEE" [params]="{query: {CompnayId: 1}}" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <di-text label="Confirmation Date" control="confirmationDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <di-text label="Leaving Date" control="leavingDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <di-text label="Seniority Date" control="seniorityDate" type="date" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-text>
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <div class="form-group row my-0">
+                                    <label class="col-sm-3 col-form-label">User Group</label>
+                                    <div class="col-sm-9">
+                                       <select class="form-control" id="levelTwo">
+                                          <option selected="">Multi Select</option>
+                                          <option>
+                                             System
+                                          </option>
+                                          <option>
+                                             Active Directory
+                                          </option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <!-- <di-dd label="User Group" [group]="_fs._form" control="userGroup" [render]="_ss.USER_GROUP" labelClass="col-sm-3 col-form-label" divClass="col-sm-9"></di-dd> -->
+                              </div>
+                              <div class="col-lg-6 my-2">
+                                 <di-text label="Has Leaved" control="hasLeaved" type="checkbox" [group]="_fs._form" labelClass="col-sm-3 col-form-label" divClass="check__radio__div" id="hasLeave"></di-text>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!----------------- add area----------------->
+</form>

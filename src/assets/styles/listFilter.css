@@ -1,0 +1,405 @@
+.search_filter_add_area {
+	background: white;
+	border-bottom: 1px solid #C9CCD2;
+	padding: 5px 0px;
+}
+
+/*----------------- common css -----------------*/
+.on__desk__px_1 {
+	padding: 0px 4px;
+}
+.search_filter_add_area .save__discard__div{
+    margin: 10px 0px;
+}
+.search_filter_add_area .save__discard__div a{
+    text-transform: uppercase;
+    padding: 5px 10px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+.search_filter_add_area .save__discard__div .third_bar_save{
+    background: var(--other-and-btn-colors);
+    color: white;
+    transition: 0.5s;
+}
+.search_filter_add_area .save__discard__div .third_bar_save:hover{
+    background: var(--other-and-btn-colors-hover);
+}
+.search_filter_add_area .save__discard__div .third_bar_discard{
+    color: var(--other-and-btn-colors);
+    transition: 0.5s;
+}
+.search_filter_add_area .save__discard__div .third_bar_discard:hover{
+    color: white;
+    background: var(--other-and-btn-colors);
+}
+/*----------------- common css -----------------*/
+
+
+/*---------------------------------- heading, add search, filter area css  ----------------------------------*/
+
+/*----------------- section 1 -----------------*/
+.search_filter_add_area .Page__heading {
+	margin-bottom: 10px;
+}
+
+.search_filter_add_area .Page__heading p {
+	font-size: 22px;
+	color: var(--other-and-btn-colors);
+    font-weight: 500 !important;
+    margin: 0px;
+}
+.search_filter_add_area .Page__heading .span__slesh{
+    font-size: 18px;
+    font-weight: 500 !important;
+}
+.search_filter_add_area .Page__heading .span__new{
+    font-weight: 300 !important;
+    color: #333;
+}
+.search_filter_add_area .new__add__btn__div a {
+	background: var(--other-and-btn-colors);
+	color: white;
+	text-transform: uppercase;
+	padding: 7px 10px;
+    font-size: 15px;
+    display: block;
+    width: fit-content;
+    transition: 0.5s;
+}
+.search_filter_add_area .new__add__btn__div a:hover{
+    background: var(--other-and-btn-colors-hover);
+}
+/*----------------- section 1 -----------------*/
+
+/*----------------- section 1 -----------------*/
+.search_filter_add_area .search__filter__div {
+	margin-bottom: 10px;
+}
+
+.search_filter_add_area .search__filter__div input {
+	border: 0px;
+	border-bottom: 1px solid #C9CCD2;
+	border-radius: 0px;
+	padding: 0px 0px;
+	height: 30px;
+}
+
+.search_filter_add_area .search__filter__div input:focus {
+	box-shadow: 0px 0px 0px transparent !important;
+	border-bottom: 1px solid #C9CCD2;
+}
+
+.search_filter_add_area .search__filter__div .input-group-text {
+	border: 0px;
+	border-bottom: 1px solid #C9CCD2;
+	border-radius: 0px;
+	background: transparent;
+	padding: 0px;
+}
+
+.search_filter_add_area .search__filter__div .input-group-text i {
+	font-size: 15px;
+	font-family: 100 !important;
+}
+
+/*----------------- section 2 -----------------*/
+
+/*----------------- section 3 -----------------*/
+.search_filter_add_area .other__filter .nav-item.dropdown a.nav-link.dropdown-toggle {
+	padding: 0px;
+	color: #575757;
+	cursor: pointer;
+	font-size: 15px;
+	text-transform: capitalize;
+	text-align: center;
+}
+
+.search_filter_add_area .other__filter .nav-item.dropdown {
+	border: 1px solid #00000000;
+}
+
+.search_filter_add_area .other__filter .nav-item.dropdown a.nav-link.dropdown-toggle i {
+	font-size: 13px;
+}
+
+.search_filter_add_area .other__filter .nav-item.dropdown a.nav-link.dropdown-toggle:after {
+	content: unset;
+}
+
+.search_filter_add_area .other__filter .nav-item.dropdown.show {
+	border: 1px solid #c9ccd2;
+}
+
+.search_filter_add_area .other__filter ul.dropdown-menu.show {
+	margin: 0px;
+	border-radius: 0px;
+	transform: unset !important;
+	top: 115% !important;
+	left: -1% !important;
+	border: 1px solid #c9ccd2;
+}
+
+.search_filter_add_area .other__filter ul.dropdown-menu.show ul.dropdown-menu.show{
+    top: 105% !important;
+    left: 0% !important;
+}
+
+/*----------------- section 3 -----------------*/
+
+/*----------------- section 4 -----------------*/
+.search_filter_add_area .other__filter .top__pagination {
+	text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+}
+.search_filter_add_area .other__filter .top__pagination span{
+    margin-right: 5px;
+    color: #8b8b8b;   
+}
+.search_filter_add_area .other__filter .top__pagination button {
+    background: #f3f4f6;
+    border: 0px;
+    padding: 7px 10px;
+    margin: 0px 1px;
+    
+}
+.search_filter_add_area .other__filter .top__pagination button:nth-child(2){
+    border-radius: 5px 0px 0px 5px;
+}
+.search_filter_add_area .other__filter .top__pagination button:nth-child(3){
+    border-radius: 0px 5px 5px 0px;
+}
+.search_filter_add_area .other__filter .top__pagination button:hover {
+	background: #f0f0f0;
+}
+
+.search_filter_add_area .other__filter .top__pagination button a {
+	color: #8b8b8b;
+    font-size: 20px;
+    display: flex;
+}
+
+/*----------------- section 4 -----------------*/
+/*----------------- section 5 -----------------*/
+.search_filter_add_area .other__filter .list__type__btns{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+.search_filter_add_area .other__filter .list__type__btns a {
+	border: 0px;
+    background: #e7e9ed;
+    padding: 5px 10px 3px 10px;
+    margin: 0px 1px;
+}
+.search_filter_add_area .other__filter .list__type__btns a:nth-child(1){
+    border-radius: 5px 0px 0px 5px;
+}
+.search_filter_add_area .other__filter .list__type__btns a:nth-child(2){
+    border-radius: 0px 5px 5px 0px;
+}
+.search_filter_add_area .other__filter .list__type__btns a:hover {
+    background: #d4d4d4;
+}
+
+.search_filter_add_area .other__filter .list__type__btns a.active {
+    color: #111827;
+    background-color: #e6f2f3;
+    border: 1px solid #017e84;
+}
+
+.search_filter_add_area .other__filter .list__type__btns a span {
+    color: #6a6b6d;
+    display: block;
+}
+
+/*----------------- section 5 -----------------*/
+
+/*---------------------------------- heading, add search, filter area css  ----------------------------------*/
+
+/*---------------------------------- grid area css  ----------------------------------*/
+
+
+/*----------------- card -----------------*/
+
+.grid_list_area_sideBar_area .grid__view__div{
+    padding: 10px;
+    margin-bottom: 60px;
+}
+.grid_list_area_sideBar_area .card_style{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background: white;
+    border: 1px solid #c9ccd2;
+}
+.grid_list_area_sideBar_area .card_style img{
+    height: 100%;
+}
+.grid_list_area_sideBar_area .card_style .card_text_contant{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0px;
+}
+.grid_list_area_sideBar_area .card_style .card_text_contant p{
+    width: 100%;
+    color: #575757;
+}
+.grid_list_area_sideBar_area .card_style .card_text_contant p:nth-child(1){
+    font-weight: 600;
+    font-size: 15px;
+}
+.grid_list_area_sideBar_area .card_style .card_text_contant p:nth-child(2){
+    font-weight: 100;
+}
+.grid_list_area_sideBar_area .card_style .card_text_contant p:nth-child(2){
+    font-weight: 100;
+}
+.grid_list_area_sideBar_area .card_style .card_text_contant p:nth-child(3){
+    font-weight: 500;
+    font-size: 14px;
+    padding-left: 10px;
+    position: relative;
+}
+.grid_list_area_sideBar_area .card_style .card_text_contant p:nth-child(3):before{
+    position: absolute;
+    content: '';
+    height: 7px;
+    width: 7px;
+    background: #ff7600;
+    left: 0;
+    top: 8px;
+    border-radius: 100px;
+}
+.grid_list_area_sideBar_area .card_style .card_text_contant p:nth-child(4){
+    font-size: 13px;
+    font-weight: 100;
+}
+.grid_list_area_sideBar_area .card_style .card_text_contant p:nth-child(5){
+    font-size: 13px;
+    font-weight: 100;
+}
+
+.grid_list_area_sideBar_area .card_style .card_status_time{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    justify-content: space-between;
+    padding: 5px 0px;
+    flex-direction: column;
+}
+.grid_list_area_sideBar_area .card_style .card_status_time span{
+    width: 100%;
+    display: block;
+    font-size: 12px;
+    color: #575757;
+    text-align: center;
+}
+.grid_list_area_sideBar_area .card_style .card_status_time span:nth-child(2){
+    font-size: 18px;
+}
+
+.grid_list_area_sideBar_area .side_bar_component{
+    padding: 0px;
+    background: white;
+    border-right: 1px solid #c9ccd2;
+}
+.grid_list_area_sideBar_area .side_bar_tabs{
+    /* position: fixed;
+    height: 100%;
+    background: white;
+    border-right: 1px solid #c9ccd2;
+    z-index: 1; */
+
+    /* position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: white;
+    border-right: 1px solid #c9ccd2;
+    z-index: 1;
+    padding: 0px 15px; */
+
+    position: sticky;
+    width: 100%;
+    top: 0;
+    
+    padding: 0px 15px;
+    z-index: 1;
+}
+.grid_list_area_sideBar_area .side_bar_tabs .side_bar_tabs_div{
+    padding: 20px 0px;
+}
+.grid_list_area_sideBar_area .side_bar_tabs .side_bar_tabs_heading{
+    font-size: 15px;
+    color: #8b8b8b;   
+    font-weight: bolder;
+}
+.grid_list_area_sideBar_area .side_bar_tabs .side_bar_tabs_heading span{
+    margin-right: 5px;
+}
+.grid_list_area_sideBar_area .side_bar_tabs .side_bar_tab_here div{
+    margin-bottom: 5px;
+}
+.grid_list_area_sideBar_area .side_bar_tabs .side_bar_tab_here a{
+    color: #575757;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 5px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.grid_list_area_sideBar_area .side_bar_tabs .side_bar_tab_here a span:nth-child(2){
+    font-size: 12px;
+}
+.grid_list_area_sideBar_area .side_bar_tabs .side_bar_tab_here a:hover{
+    background: #f0f7fa;
+}
+.grid_list_area_sideBar_area .side_bar_tabs .side_bar_tab_here a.active{
+    background: #daebf1;
+}
+
+
+/* .grid_list_area_sideBar_area .list__view__div{
+    overflow: auto;
+} */
+.list__view__div{
+    margin-bottom: 80px;
+}
+.grid_list_area_sideBar_area .list__view__div .list__view__div__table{
+    width: 100%;
+}
+.grid_list_area_sideBar_area .list__view__div .list__view__div__table tr{
+    border-bottom: 1px solid #c9ccd2;
+}
+.grid_list_area_sideBar_area .list__view__div .list__view__div__table tr:nth-child(even){
+    background: #fcfcfc;
+}
+.grid_list_area_sideBar_area .list__view__div .list__view__div__table tr:nth-child(odd){
+    background: white;
+}
+
+.grid_list_area_sideBar_area .list__view__div .list__view__div__table tr th{
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+}
+.grid_list_area_sideBar_area .list__view__div .list__view__div__table tr td{
+    padding: 5px 10px;
+    font-size: 13px;
+    text-align: center;
+    white-space: nowrap;
+}
