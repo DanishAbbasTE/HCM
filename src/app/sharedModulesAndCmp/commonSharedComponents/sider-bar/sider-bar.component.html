@@ -1,0 +1,22 @@
+<div class="side_bar_tabs">
+  <div class="side_bar_tabs_div">
+      <p class="side_bar_tabs_heading">
+          <span>
+              <i class="fa fa-users"></i>
+          </span>
+          {{sideBarName}}
+      </p>
+      <div class="side_bar_tab_here">
+          <div *ngFor="let data of SideBarData">
+              <a href="javascript:void(0);" class="sideTabs showOnliAmin" (click)="getFilteredRecords(data.id)">
+                  <span>
+                      {{data.title}}
+                  </span>
+                  <span>
+                    {{data.count}}
+                  </span>
+              </a>
+          </div>
+      </div>
+  </div>
+</div>

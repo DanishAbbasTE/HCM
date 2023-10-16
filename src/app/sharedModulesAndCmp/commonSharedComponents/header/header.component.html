@@ -1,0 +1,146 @@
+      <!----------------- nav ----------------->
+      <nav class="navbar navbar-expand-lg navbar_1">
+        <a class="navbar-brand" href="javascript:void(0);">
+          <span class="nav_svg_span">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 14 14">
+              <g fill="currentColor" id="o_menu_toggle_row_0">
+                <rect width="4" height="4" x="0" y="0"></rect>
+                <rect width="4" height="4" x="5" y="0"></rect>
+                <rect width="4" height="4" x="10" y="0"></rect>
+              </g>
+              <g fill="currentColor" id="o_menu_toggle_row_1">
+                <rect width="4" height="4" x="0" y="5"></rect>
+                <rect width="4" height="4" x="5" y="5"></rect>
+                <rect width="4" height="4" x="10" y="5"></rect>
+              </g>
+              <g fill="currentColor" id="o_menu_toggle_row_2">
+                <rect width="4" height="4" x="0" y="10"></rect>
+                <rect width="4" height="4" x="5" y="10"></rect>
+                <rect width="4" height="4" x="10" y="10"></rect>
+              </g>
+            </svg>
+          </span>
+        </a>
+        <a class="navbar-brand d-none d-lg-block d-xl-block" href="javascript:void(0);">
+          Employee
+        </a>
+        <ul class="navbar-nav ml-auto d-flex d-lg-none d-xl-none">
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0);">
+              <span class="menu_site_name">
+                Optimise
+              </span>
+            </a>
+          </li>
+        </ul>
+        <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">
+            <i class="fa fa-window-maximize"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="'/Personal_Management/employee/employee_list'">
+                Employees
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Departments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Reporting</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Configuration
+              </a>
+              <ul class="dropdown-menu brop_ul" aria-labelledby="navbarDropdownMenuLink">
+                <ng-container *ngFor="let item of dropDownData">
+                  <li>
+                    <a [class]="item.class" href="javascript:void(0);">{{ item.title }}</a>
+                  </li>
+                  <li *ngFor="let subItem of item.data">
+                    <a [class]="subItem.class" [routerLink]="subItem.path">{{ subItem.title }}</a>
+                  </li>
+                </ng-container>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Language
+              </a>
+              <ul class="dropdown-menu brop_ul" aria-labelledby="navbarDropdownMenuLink">
+                <ng-container *ngFor="let lang of language">
+                  <li (click)="setLanguageEnvironment(lang)">
+                    <a class="dropdown-item head_item" href="javascript:void(0);" #lang>{{lang.title}}</a>
+                  </li>
+                </ng-container>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav d-none d-lg-flex d-xl-flex">
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0);">
+                <i class="fa-classic fa-clock-four"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0);">
+                <span class="menu_user_symbol">U</span>
+                User
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0);">
+                <span class="menu_site_name">
+                  Optimise
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <button class="back__black__btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
+      <div class="responsive_side_bar collapse" id="navbarSupportedContent">
+        <div class="user_name_close_divs">
+          <div class="user_name_div">
+            <a href="javascript:void(0);">
+              <span class="menu_user_symbol">U</span>
+              User
+            </a>
+          </div>
+          <div class="close_div">
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span>
+                <i class="fa fa-close"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="listing__side__bar">
+          <ul>
+            <ng-container *ngFor="let item of sideBarData">
+              <li>
+                <a href="javascript:void(0);" [class]="item.class">{{ item.title }}</a>
+                <ul *ngIf="item.data.length > 0">
+                  <li *ngFor="let subItem of item.data">
+                    <a href="javascript:void(0);" [class]="subItem.class">{{ subItem.title }}</a>
+                    <ul *ngIf="subItem.subData && subItem.subData.length > 0">
+                      <li *ngFor="let thirdItem of subItem.subData">
+                        <a href="javascript:void(0);" [class]="thirdItem.class">{{ thirdItem.title }}</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <!----------------- nav ----------------->

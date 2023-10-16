@@ -14,11 +14,14 @@
 }
 
 @media(max-width: 767px){
+    .grid_list_area_sideBar_area .side_bar_component{
+        border-right: 0px solid transparent;
+    }
     .search_filter_add_area .new__add__btn__div a{
         margin-left: auto;
     }
     .grid_list_area_sideBar_area .side_bar_tabs{
-        position: unset;
+        position: unset !important;
         border-right: 0px;
         border-bottom: 1px solid #c9ccd2;
     }

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FeaturedRoutingModule } from './featured-routing.module';
 
 
+
 @NgModule({
   declarations: [],
   imports: [
