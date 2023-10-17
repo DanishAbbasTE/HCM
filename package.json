@@ -27,6 +27,7 @@
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "bootstrap": "^4.6.0",
+    "bootstrap-select": "^1.13.1",
     "jquery": "^3.5.1",
     "ngx-spinner": "^14.0.0",
     "ngx-toastr": "^15.2.2",
